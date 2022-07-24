@@ -2,9 +2,9 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/dohewjes/public_html/
-    - /cp index.html $DEPLOYPATH
-    - /cp styles.css $DEPLOYPATH
-    - /cp -R pages $DEPLOYPATH
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp styles.css $DEPLOYPATH
+    - /bin/cp -R pages $DEPLOYPATH
     #- export REPOPATH=/home/dohewjes/repositories/DohertySoftware-Website
     #- /rm -Rf ${DEPLOYPATH}_old
     #- /cp -R ${DEPLOYPATH} ${DEPLOYPATH}_old

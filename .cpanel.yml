@@ -3,9 +3,9 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/dohewjes/public_html/
     - export REPOPATH=/home/dohewjes/repositories/DohertySoftware-Website
-    - /bin/rm -Rf ${DEPLOYPATH}_old
-    - /bin/cp -R ${DEPLOYPATH} ${DEPLOYPATH}_old
-    - /bin/rsync -aP --exclude '.git' --exclude '.well-known' ${REPOPATH}/ ${DEPLOYPATH} --delete-after
-    - /bin/chmod 755 ${DEPLOYPATH}
-    - /bin/find ${DEPLOYPATH} -type d -exec /bin/chmod 755 '{}' \;
-    - /bin/find ${DEPLOYPATH} -type f -exec /bin/chmod 644 '{}' \;
+    - /rm -Rf ${DEPLOYPATH}_old
+    - /cp -R ${DEPLOYPATH} ${DEPLOYPATH}_old
+    - /rsync -aP --exclude '.git' --exclude '.well-known' ${REPOPATH}/ ${DEPLOYPATH} --delete-after
+    - /chmod 755 ${DEPLOYPATH}
+    - /find ${DEPLOYPATH} -type d -exec /chmod 755 '{}' \;
+    - /find ${DEPLOYPATH} -type f -exec /chmod 644 '{}' \;

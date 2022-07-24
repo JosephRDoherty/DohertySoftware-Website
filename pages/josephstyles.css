@@ -1,0 +1,91 @@
+/*
+Seafoam: #96ceb4
+White Sand: #ffeead
+Coral: #ff6f69
+Sand: #ffcc5c
+Darker Seafoam: #88d8b0
+
+Shades of Teal, from lightest to darkest:
+#b2d8d8
+#66b2b2
+#008080
+#006666
+#004c4c
+
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
+    color:#b2d8d8;
+    
+}
+
+html {
+    background-color: #004c4c;
+}
+
+body {
+    padding-left:5%;
+    padding-right:5%;
+}
+
+.sidebar {
+    display: inline-block;
+    padding: 0px;
+    background-color: #66b2b2;
+    width: 82px;
+    height: 100%;
+    margin-left: -5%;
+    position: fixed;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sidebutton {
+    border-right: 8px solid #ffcc5c;
+}
+
+.sidebutton img {
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#filler {
+    height:16000px;
+    border-right: 8px solid #ffcc5c;
+}
+
+.sidebutton:hover {
+    background-color: #008080;
+    border-right: 8px solid #ff6f69;
+}
+
+
+.title {
+    display: inline-block;
+    position: fixed;
+    margin-left: 0%;
+    margin-right: 0%;
+    background-color: #ffeead;
+    padding: 20%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+}
+
+.title h1 {
+    color: #ff6f69;
+}
+
+.title h3 {
+    color: #ff6f69;
+}
+

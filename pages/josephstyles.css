@@ -111,12 +111,12 @@ body {
 @media screen and (max-width: 600px) {
     .title h1 {
         color: #ff6f69;
-        margin-left: 20%;
+        margin-left: 25%;
     }
     
     .title h3 {
         color: #ff6f69;
-        margin-left: 20%;
+        margin-left: 25%;
     }
     
     }

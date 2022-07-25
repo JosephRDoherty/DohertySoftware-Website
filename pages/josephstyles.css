@@ -59,6 +59,7 @@ body {
 }
 
 #filler {
+    /*yes I know this is kinda cheating, I just don't know a better way to do it*/
     height:16000px;
     border-right: 8px solid #ffcc5c;
 }
@@ -72,10 +73,12 @@ body {
 .title {
     display: inline-block;
     position: fixed;
-    margin-left: 0%;
+    width: 100%;
+    margin-left: -2%;
     margin-right: 0%;
     background-color: #ffeead;
-    padding: 20%;
+    padding-right: 20%;
+    padding-left: 10%;
     padding-top: 24px;
     padding-bottom: 24px;
 
@@ -83,9 +86,38 @@ body {
 
 .title h1 {
     color: #ff6f69;
+    margin-left: 10%;
 }
 
 .title h3 {
     color: #ff6f69;
+    margin-left: 10%;
 }
 
+@media screen and (max-width: 992px) {
+.title h1 {
+    color: #ff6f69;
+    margin-left: 15%;
+}
+
+.title h3 {
+    color: #ff6f69;
+    margin-left: 15%;
+}
+
+}
+
+
+@media screen and (max-width: 600px) {
+    .title h1 {
+        color: #ff6f69;
+        margin-left: 20%;
+    }
+    
+    .title h3 {
+        color: #ff6f69;
+        margin-left: 20%;
+    }
+    
+    }
+    

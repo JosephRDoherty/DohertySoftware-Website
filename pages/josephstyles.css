@@ -239,6 +239,16 @@ body {
     margin-bottom: 8px;
 }
 
+footer p {
+    display: inline-block;
+}
+
+footer #logo {
+    width: 48px;
+    margin-left: 40px;
+    display: inline-block;
+}
+
 
 @media screen and (max-width: 992px) {
     .sidebar {

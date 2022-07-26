@@ -5,6 +5,7 @@ deployment:
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp styles.css $DEPLOYPATH
     - /bin/cp -R pages $DEPLOYPATH
+    - /bin/cp -R images $DEPLOYPATH
     #- export REPOPATH=/home/dohewjes/repositories/DohertySoftware-Website
     #- /rm -Rf ${DEPLOYPATH}_old
     #- /cp -R ${DEPLOYPATH} ${DEPLOYPATH}_old

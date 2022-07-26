@@ -97,7 +97,17 @@ body {
 
 .container {
     padding-top:150px;
+    max-width: 1200px;
     margin-left: 4%;
+}
+
+.bio {
+    background-color: #006666;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-left: 8px solid #ffcc5c;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 992px) {

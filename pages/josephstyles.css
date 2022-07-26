@@ -154,7 +154,7 @@ body {
 
 .thumbnail {
     display: inline-block;
-    background-color: #006666;
+    background-color: #66b2b2;
     border-left: 8px solid #ffcc5c;
     margin-bottom: 20px;
     padding: 40px;
@@ -164,6 +164,11 @@ body {
     border-top-right-radius: 20px;
     max-height: 300px;
 }
+
+.projects h1 {
+    color:#ffcc5c;
+}
+
 
 .thumbnail h1 {
     font-size: 2em;
@@ -180,9 +185,23 @@ body {
     border-bottom-left-radius: 30px;
 }
 
-.work_exp {
 
+#forceColor {
+    color:#ffcc5c;
 }
+
+.thumbnail:hover #forceColor {
+    color:#ff6f69;
+}
+
+.work_exp h1 {
+    color: #ffcc5c;
+}
+
+#forceDefault {
+    color:#b2d8d8;
+}
+
 
 .dropdown {
     background-color: #006666;
@@ -214,7 +233,9 @@ body {
 
 }
 
-
+.moreinfo li {
+    margin-bottom: 8px;
+}
 
 
 @media screen and (max-width: 992px) {
@@ -263,7 +284,12 @@ body {
     }
     
     .container {
-        margin-left: 12%;
+        margin-left: 10.5%;
+    }
+
+    .profile_container {
+        margin-left: 8%;
+        margin-right: auto;
     }
 
     .location h2 {
@@ -276,6 +302,10 @@ body {
         height: auto;
         padding-top: 30px;
         padding-bottom: 30px
+    }
+
+    .work_exp h1 {
+        font-size: 1.45em;
     }
 
 }
@@ -317,5 +347,9 @@ body {
 
     .location h2{
         text-align: left;
+    }
+
+    .work_exp h1 {
+        font-size: 1.45em;
     }
 }

@@ -110,31 +110,68 @@ body {
     margin-bottom: 20px;
 }
 
+.thumbnail {
+    display: inline-block;
+    background-color: #006666;
+    border-left: 8px solid #ffcc5c;
+    margin-bottom: 20px;
+    padding: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    max-height: 300px;
+}
+
+.thumbnail h1 {
+    font-size: 2em;
+}
+
+.left_thumbnail {
+
+}
+
+.middle_thumbnail {
+
+}
+
+.right_thumbnail {
+    
+}
+
 @media screen and (max-width: 992px) {
-.sidebar {
-    width: 62px;
-}
+    .sidebar {
+        width: 62px;
+    }
 
-.sidebutton img {
-    width: 54px;
-}
+    .sidebutton img {
+        width: 54px;
+    }
 
-.title h1 {
-    color: #ff6f69;
-    margin-left: 15%;
-}
+    .title h1 {
+        color: #ff6f69;
+        margin-left: 15%;
+    }
 
-.title h3 {
-    color: #ff6f69;
-    margin-left: 15%;
-}
+    .title h3 {
+        color: #ff6f69;
+        margin-left: 15%;
+    }
 
-.container {
-    margin-left: 12%;
-}
+    .container {
+        margin-left: 12%;
+    }
+
+    .thumbnail {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding-top: 30px;
+        padding-bottom: 30px
+    }
+
 
 }
-
 
 @media screen and (max-width: 600px) {
     .title h1 {
@@ -148,12 +185,20 @@ body {
     }
     
     .container {
-        margin-left: 20%;
+        margin-left: 12%;
     }
 
+    .thumbnail {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding-top: 30px;
+        padding-bottom: 30px
     }
+
+}
     
-@media screen and (max-width: 326px) {
+@media screen and (max-width: 426px) {
     .sidebar {
         width: 42px;
     }
@@ -180,6 +225,16 @@ body {
     }
     
     .container {
-        margin-left: 20%;
+        padding-top: 120px;
+        margin-left: 15%;
+    }
+
+    .bio h3 {
+        font-size: 16px;
+    }
+
+
+    .thumbnail h1 {
+
     }
 }

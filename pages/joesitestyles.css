@@ -3,13 +3,23 @@
 html {
     margin: 0px;
     padding: 0px;
-    height: 100%;
+    width: 100vw;
     font-family: 'Quicksand', sans-serif;;
     box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+}
+
+html, body {
+    overflow-x:hidden;
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 body {
-    height: 100%;
+    position: relative;
     margin: 0px;
     padding: 0px;
     display: flex;
@@ -18,18 +28,67 @@ body {
     justify-content: center;
 }
 
+ul {
+    padding: 0px;
+}
 
 .hero {
     display: flex;
     flex-direction: column;
-    background-color: black;
-    color:chartreuse;
+    justify-content:baseline;
+    background-color: 	#383c4a;
+    color:	#5294e2;
+    width: 100vw;
+    height: 100vh;
+    flex: 1 1 auto;
+}
+
+.navbar {
+    display: flex;
+    color: chartreuse;
+    height: 2em;
+    width: 100vw;
+    list-style: none;
+    justify-self:flex-start;
+}
+
+.navbar ul {
+    width: 100vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar li {
+    display: flex;
+    align-self: center;
+}
+
+.navbar a {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #d7d9dc;
+}
+
+.navbar a:hover {
+    color: #5294e2;
+}
+
+.profile {
+    margin-top: 15vh;
+    flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-    flex: 1 0 auto;
+    align-self: center;
+    justify-self: center;
+
 }
 
 .profilepic {
@@ -37,28 +96,133 @@ body {
     max-width: 75%;
     max-height: 40%;
     border-radius: 25%;
-    border: 4px solid chartreuse;
+    border: 4px solid #5294e2;
     margin-bottom: 2em;
 }
 
+.profile li {
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
 .hero h1 {
+    padding: 0px;
     margin-top: 0px;
     font-size: 32px;
     margin-bottom: 0px;
 }
 
-.hero h2 {
-    margin-top: 0;
-    font-size: 16px;
-}
-
 .bio {
-    background-color: silver;
+    background-color: #a3a6ae;
+    color: #383c4a;
     width: 100%;
-    height: 600px;
-    padding: 2em;
+    height: 50vh;
 }
 
 .biotext {
     margin: 10px;
+}
+
+.projects {
+    background-color: #383c4a;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 2 auto;
+}
+
+.projects h2 {
+    color: #5294e2;
+    text-align: center;
+    margin: 0px;
+}
+
+.projectbuttons {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 2;
+    align-items: center;
+
+}
+
+.projectbuttons ul {
+    list-style: none;
+    justify-content: space-between;
+}
+
+.projectbuttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4px;
+    width: 80vw;
+    height: 9vh;
+    margin-bottom: 2vh;
+    text-decoration: none;
+    background-color: #5294e2;
+    color: #383c4a;
+    font-weight: 700;
+    border: 4px solid white;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 4px 4px #7c818c;
+    transition: all 0.2s;
+}
+
+.projectbuttons a:hover {
+    border-color: #5294e2;
+    background-color: #404552;
+    color: white;
+    box-shadow: none;
+}
+
+.education {
+    display: flex;
+    flex-direction: column;
+    background-color: #a3a6ae;
+    color: #383c4a;
+    width: 100%;
+    height: 50vh;
+    align-items: center;
+}
+
+.education h2 {
+    align-items: flex-start;
+    text-align: center;
+}
+
+.education ul {
+    list-style: none;
+    align-items: center;
+}
+
+.education li {
+    padding: 1em;
+}
+
+.education a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #383c4a;
+
+}
+
+.experience {
+    background-color: #383c4a;
+
+    width: 100%;
+    height: 50vh;
+}
+
+.experience h2 {
+    color: #5294e2;
+    text-align: center;
 }

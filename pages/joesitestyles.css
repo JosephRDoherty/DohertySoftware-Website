@@ -216,13 +216,61 @@ ul {
 }
 
 .experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #383c4a;
-
     width: 100%;
-    height: 50vh;
+    min-height: 50vh;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .experience h2 {
+    margin: 0px;
+    padding: 0px;
     color: #5294e2;
     text-align: center;
+}
+
+.jobtitle {
+    margin: 0px;
+    margin-top: 1em;
+    padding: 0px;
+    width: 80vw;
+
+}
+
+.jobtitle h3 {
+    margin: 0px;
+    padding: .3em;
+    padding-left: 1em;
+    border: 4px solid white;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    transition: all 0.2s;
+    color: #383c4a;
+    background-color: #5294e2;
+}
+
+.jobdescription {
+    margin: 0px;
+    margin-left: 2em;
+    padding: .5em;
+    background-color: #4b5162;
+    color: #d7d9dc;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.jobdescription ul {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-decoration: none;
+    list-style: none;
 }

@@ -289,7 +289,7 @@ ul {
 /* Below is CSS for larger screens */
 
 
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 600px) {
 
     #cont1 {
         border-top:5px solid #5294e2;
@@ -313,7 +313,7 @@ ul {
         height: 40vh;
     }
 
-}
+} */
 
 
 
@@ -321,7 +321,7 @@ ul {
 
 
 
-
+/* 
 @media only screen and (min-width: 768px) {
 
     body {
@@ -361,7 +361,7 @@ ul {
         margin: 0px;
         max-height: 25vh;
         /* max-width: 40vw; */
-    }
+    /*} 
 
     .nameandtitle {
         margin-left: 5vw;
@@ -398,4 +398,4 @@ ul {
 
 
 
-}
+}  */

@@ -288,114 +288,27 @@ ul {
 /* Above CSS is for screens smaller than 600px wide */
 /* Below is CSS for larger screens */
 
-
-/* @media only screen and (min-width: 600px) {
-
-    #cont1 {
-        border-top:5px solid #5294e2;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .bio, .projects {
-        width: 50vw;
-        height: 40vh;
-        margin: 0px;
-    }
-
-    .projects a {
-        width: 95%;
-        height: 4.5vh;
-    }
-
-    .education {
-        border-top:5px solid #5294e2;
-        height: 40vh;
-    }
-
-} */
-
-
-
-
-
-
-
-/* 
 @media only screen and (min-width: 768px) {
 
-    body {
-
-    }
-
-    #cont1 {
-        border: none;
-    }
-
-    .sectioncontainer {
-        display: flex;
+    .projectbuttons {
         flex-direction: row;
+        flex-grow: 2;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
     }
 
-    .bio, .projects, .education, .experience {
-        width: 50vw;
-        height: 30vh;
-    }
-
-    .hero {
-        height: 40vh;
-        border-bottom: 5px solid #5294e2;
-
-    }
-
-    .profile {
-        display: flex;
+    .projectbuttons ul {
         flex-direction: row;
-        height: 100%;
-        width: 60vw;
-        margin: 0px;
-        justify-content: space-between;
+        justify-content: space-around;
+        width: 100vw;
     }
 
-    .profilepic {
-        margin: 0px;
-        max-height: 25vh;
-        /* max-width: 40vw; */
-    /*} 
+     .projectbuttons a {
+        justify-content: space-around;
+        width: 30vw;
+        /* height: 9vh; */
+        /* /* margin-bottom: 2vh;  */
+    } 
 
-    .nameandtitle {
-        margin-left: 5vw;
-    }
-
-    .nameandtitle li {
-        text-align: right;
-    }
-
-    .projects a {
-        width: 95%;
-        height: 3.5vh;
-    }
-
-    .experience {
-        height: auto;
-    }
-
-    .jobtitle {
-        width: 80%;
-    }
-
-    .education {
-        height: auto;
-        border: none;
-    }
-
-    #cont2 {
-        flex-direction: row-reverse;
-    }
 }
-
-@media only screen and (min-width: 992px) {
-
-
-
-}  */

@@ -28,6 +28,14 @@ html {
     scrollbar-width: none; 
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html, body {
+    overflow-x:hidden;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -41,18 +49,15 @@ body {
 
 ul {
     padding: 0px;
+    list-style: none;
 }
 
-html, body {
-    overflow-x:hidden;
-}
+a {
+    text-decoration: none;
 
-html::-webkit-scrollbar {
-    display: none;
 }
 
 .hero {
-    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,13 +67,16 @@ html::-webkit-scrollbar {
 
 .navbar {
     display: flex;
-    width: 100vw;
+    width: 90vw;
     justify-self: flex-start;
     justify-content: space-between;
+    font-size: 1.25rem;
+    font-weight: 900;
 }
 
 .profile {
     width: 100vw;
+    margin-top: 15.5vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,6 +87,26 @@ html::-webkit-scrollbar {
     margin: 0px;
     max-width: 75vw;
     max-height: 40vh;
+}
+
+.nameandtitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nameandtitle h1 {
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+    font-size: 2.5em;
+}
+
+.nameandtitle ul {
+    margin: 0px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-align: center;
 }
 
 .bio {

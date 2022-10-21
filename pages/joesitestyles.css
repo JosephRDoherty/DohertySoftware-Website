@@ -12,6 +12,78 @@ very soft drop shadows sometimes
 
 THIS IS THE LOOK
 https://youtu.be/O3KBEVVXCHc?t=217
-
-
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
+
+html {
+    background-color: #f5faff;
+    color: #202a33;
+    width: 100vw;
+    margin: 0;
+    font-family: 'Gruppo', cursive;
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+ul {
+    padding: 0px;
+}
+
+html, body {
+    overflow-x:hidden;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.hero {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    width: 100vw;
+    justify-self: flex-start;
+    justify-content: space-between;
+}
+
+.profile {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profilepic {
+    margin: 0px;
+    max-width: 75vw;
+    max-height: 40vh;
+}
+
+.bio {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

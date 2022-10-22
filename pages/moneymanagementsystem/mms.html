@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.M.S. - J|Labs</title>
+    <link rel="stylesheet" href="cashFlowStyles.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/86a01f560a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navBar">
+            <h3>J|Labs<span id="darkModeBtn"><i class="fa-solid fa-moon"></i></span></h3>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="docBody">
+        
+
+        <div class="cbBody">
+            <div class="title">
+                <h1 id="secretButton">Welcome</h1>
+                <p><strong>Today's Date: </strong><span id="today"></span></p>
+            </div>
+            <div class="menu">
+        
+                <div class="statsContainer">
+                    <div class="stats">
+                        <h4>Stats:</h4>
+                        <ul>
+                            <li>Expected Income this Month: <strong>$<span id="monthlyIncome"></span></strong></li>
+                            <li>Total Monthly Expenses: <strong>$<span id="monthlyExpenses"> </span></strong></li>
+                            <li>Monthly Profit: <strong>$<span id="monthlyProfit"> </span></strong></li>
+                            <li title="Uses the percentage of cost to income" style="cursor: help">Fortnight Budget:
+                                <strong>$<span id="fortnightBudget"></span></strong></li>
+                            <li title="Divides total yearly cost evenly across the year" style="cursor: help">Fortnight Budget
+                                v2: <strong>$<span id="fortnightBudgetv2"></span></strong></li>
+                            <li title="Prediction algorithm that looks ahead in time" style="cursor: help">Fortnight Budget v3:
+                                <strong>$<span id="fortnightBudgetv3"></span></strong></li>
+                            <li style="visibility:hidden;"></li>
+                            <li>Current Fortnight: <strong><span id="currentFortnight"> </span></strong></li>
+                            <li>Income Per Fortnight: <strong>$<span id="totalIncome"> </span></strong></li>
+                            <li>Amount Due This Fortnight: <strong>$<span id="fortnight1Expenses"> </span></strong></li>
+                            <li>Profit This Fortnight: <strong>$<span id="thisFortnightProfit"></span></strong></li>
+                            <li style="visibility:hidden;"></li>
+                            <li>Days Remaining: <strong><span id="daysRemaining"> </span></strong></li>
+                            <li>Next Paycheck: <strong><span id="nextPaycheck"> </span></strong></li>
+                            <li>Amount Due Next Fortnight: <strong>$<span id="fortnight2Expenses"> </span></strong></li>
+                        </ul>
+                    </div>
+        
+        
+                    <div class="optionsContainer">
+                        <div class="options">
+                            <h4>Information: <span id="fortnightInfo"></span></h4>
+                            <ul class="optionsUl">
+                                <li class="btn" id="information">Help</li>
+                                <li class="btn" id="billsDueFortnight1"><span id=fortnight1Date></span> $<span
+                                        id="fortnight1Cost"></span></li>
+                                <li class="btn" id="billsDueFortnight2"><span id=fortnight2Date></span> $<span
+                                        id="fortnight2Cost"></span></li>
+                                <li class="btn" id="billsDueFortnight3"><span id=fortnight3Date></span> $<span
+                                        id="fortnight3Cost"></span></li>
+                                <li class="btn" id="billsDueFortnight4"><span id=fortnight4Date></span> $<span
+                                        id="fortnight4Cost"></span></li>
+                                <li class="btn" id="billList">All Bills</li>
+                                <li class="btn" id="payCalendar">Pay Calendar</li>
+                                <li class="btn" style="display: none">Add/Update Bill</li>
+                                <li class="btn" style="display: none">Add/Update Paycheck</li>
+                            </ul>
+                        </div>
+                        <div class="dropdownArea">
+                            <div>
+                                <div id="informationDropDown" class="dropDown" style="display: none"></div>
+                            </div>
+                            <div>
+                                <div id="billsDueFortnight1DropDown" class="dropDown" style="display: none"></div>
+                            </div>
+                            <div>
+                                <div id="billsDueFortnight2DropDown" class="dropDown" style="display: none"></div>
+                            </div>
+                            <div>
+                                <div id="billsDueFortnight3DropDown" class="dropDown" style="display: none"></div>
+                            </div>
+                            <div>
+                                <div id="billsDueFortnight4DropDown" class="dropDown" style="display: none"></div>
+                            </div>
+                            <div>
+                                <div id="allBillsDropDown" class="dropDown" style="display: none"></div>
+                            </div>
+                            <div>
+                                <div id="payCalendarDropDown" class="dropDown" style="display: none"></div>
+                            </div>
+                            <div>
+                                <div id="searchResults" class="dropDown" style="display: none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <script src="~/js/cashFlowController.js"></script> -->
+        
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <p>&copy; 2022 - Joseph Doherty</p>
+        </div>
+    </footer>
+
+    <script src="site.js"></script>
+    <script src="cashFlowModel.js"></script>
+    
+</body>
+</html>

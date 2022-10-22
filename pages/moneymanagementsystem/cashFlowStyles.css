@@ -1,0 +1,624 @@
+﻿html {
+    font-size: 14px;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    position: relative;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    margin-bottom: 60px;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.darkMode {
+    background-color: #242427;
+    color: #e4e6eb;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', Georgia, serif;
+}
+
+.container {
+    padding: 0;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+
+.navBar {
+    display: flex;
+    width: 100vw;
+    background-color: #319194;
+    justify-content: space-between;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 2vh;
+    border-bottom: 3px solid black;
+}
+
+    .navBar ul {
+        display: flex;
+        justify-content: space-between;
+        gap: 1em;
+    }
+
+    .navBar li {
+        list-style: none;
+    }
+
+        .navBar li a {
+            text-decoration: none;
+            color: black;
+            font-family: 'Merriweather', Georgia, serif;
+        }
+
+            .navBar li a:hover {
+                color: #ff7500;
+            }
+
+#darkModeBtn {
+    box-sizing: border-box;
+    margin: 1em;
+    padding:2px;
+    padding-left: 9px;
+    padding-right: 9px;
+    border-radius: 100%;
+    background-color: #242427;
+    border: 2px solid #242427;
+    color:#e4e6eb;
+}
+
+.darkModeBtnActive {
+    background-color: #e4e6eb !important;
+    color:#242427 !important;
+    box-shadow:inset 0 0 10px #242427;
+}
+
+
+.tabContainer {
+    display: flex;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    background-color: #319194;
+    width: fit-content;
+    margin-left: 10%;
+}
+
+    .tabContainer .tabButton {
+        border: none;
+        padding: .5em;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+        background-color: transparent;
+        color: white;
+        transition: text-decoration .1s ease-in-out;
+        border-bottom: 2px solid #319194;
+    }
+
+
+.tabContainer .tabActive {
+    border: none;
+    padding: .5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    background-color: #ff7500;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    color: white;
+    transition: text-decoration .1s ease-in-out;
+    border-bottom: 2px solid #ff7500;
+}
+
+
+.subNav {
+    display: none;
+}
+
+.subNavMobile {
+    display: block;
+    padding: .75em;
+    background-color: #319194;
+    position: sticky;
+}
+
+    .subNavMobile #hamButton {
+        aspect-ratio: 3/1;
+        padding: 5px;
+        max-width: fit-content;
+        max-height: fit-content;
+        border: 2px solid black;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+.hamButtonOn {
+    background-color: #ff7500;
+}
+
+.subNavMobile #hamButton h1 {
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+}
+
+#tabPanel {
+    background-color: #d9d9d9;
+    display: flex;
+    position: relative;
+    margin-bottom: 1em;
+    flex-direction: row;
+    z-index: 100 !important;
+    width: 100vw;
+    height: fit-content;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+#tabPanel .tabButton {
+    height: 3em;
+    border: none;
+    background-color: transparent;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+    #tabPanel .tabActive {
+        height: 3em;
+        width: auto;
+        border: none;
+        background-color: #ff7500;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+
+
+#razorMagic {
+    background-color: green;
+    display: grid;
+    grid-template-columns: [line1] 25% [line2] 25% [line3] 25%;
+    gap: 20px;
+    padding: 1em;
+    border-radius: 20px;
+    justify-content: space-between;
+}
+
+.lasag {
+    background-color: antiquewhite;
+    padding: 1em;
+    border-radius: 20px;
+    justify-self: center;
+}
+
+#productGrid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridDiv {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    padding: 1em;
+    gap: 1em;
+    justify-content: center;
+}
+
+#hubPage {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.flexDiv {
+    display: flex;
+    padding: 3em;
+    gap: 1em;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.imageBox {
+    background-color: #eee;
+    aspect-ratio: 1/1;
+    width: clamp(30vw, 70vw, 90vw);
+    height: auto;
+    border-radius: 25px;
+    transition: all .25s ease-in-out;
+    margin-bottom: 1em;
+}
+
+.description {
+    margin-left: 1em;
+    margin-right: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: all .25s ease-in-out;
+}
+
+    .description h5 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .description p {
+        text-align: center;
+        font-weight: 400;
+        color: #319194;
+        font-size: 2rem;
+        transition: all .2s ease-in-out;
+    }
+
+.featured {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+
+    transition: box-shadow .2s ease-in-out;
+    border-radius: 25px;
+}
+
+    .featured:hover {
+        box-shadow: .2rem .2rem 6px #808080;
+        border-radius: 25px;
+    }
+
+    .featured .document {
+        border: 3px solid #319194;
+        border-radius: 25px;
+    }
+
+        .featured .document:hover {
+            box-shadow: none;
+            border-radius: 25px;
+        }
+
+    .featured .description {
+        flex-direction: column;
+        width: 100%;
+    }
+
+.document {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: clamp(34vw, 74vw, 94vw);
+    border-radius: 25px;
+    transition: all .2s ease-in-out;
+}
+
+    .document:hover {
+        box-shadow: .2rem .2rem #319194;
+        border-radius: 25px;
+        background-color: #eefffd;
+        cursor: pointer;
+    }
+
+    .document .imageBox {
+        margin-top: 8px;
+    }
+
+
+    .document .description {
+        align-items: center;
+    }
+
+        .document .description button {
+            max-width: 30vw;
+            border-radius: 25px;
+            padding: 8px;
+            padding-left: 12px;
+            padding-right: 12px;
+            background-color: #319194;
+            color: white;
+            font-weight: bold;
+            border: none;
+            margin-bottom: 1em;
+            transition: all .2s ease-in-out;
+            justify-self: flex-end;
+        }
+
+    .document:hover button {
+        background-color: #ff7500;
+    }
+
+    .document p {
+        font-size: 1rem;
+    }
+
+.product:hover .imageBox {
+    box-shadow: .2rem .2rem #319194;
+}
+
+.product:hover .description {
+    color: #ff7500;
+}
+
+    .product:hover .description p {
+        color: #ff7500;
+    }
+
+/*Desktop and Tablet CSS*/
+@media only screen and (min-width:600px) {
+    .navBar {
+        margin-bottom: .5em;
+    }
+
+
+    .subNav {
+        display: block;
+        border-bottom: 2px solid #ff7500;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .subNavMobile {
+        display: none;
+    }
+
+    #tabPanel {
+        display: none !important;
+    }
+
+    .gridDiv {
+        grid-template-columns: auto auto;
+        padding: 3em;
+    }
+
+    .flexDiv {
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .imageBox {
+        width: clamp(20vw, 40vw, 70vw);
+        margin: .5em;
+    }
+
+    .featured {
+        width: 90%;
+        height: auto;
+        justify-self: center;
+        align-self: center;
+    }
+
+        .featured .document {
+            flex-direction: row;
+            /*padding: 1em;*/
+        }
+
+        .featured .description {
+            align-items: flex-end;
+            width: 100%;
+        }
+
+        .featured h5, .featured p {
+            text-align: right;
+        }
+
+    .document {
+        width: auto;
+    }
+}
+
+/*Stolen from ASP.NET*/
+@media only screen and (min-width: 992px) {
+    .gridDiv {
+        grid-template-columns: auto auto auto;
+    }
+
+    .imageBox {
+        width: clamp(20vw, 25vw, 30vw);
+    }
+
+    .featured .description {
+        width: 65%;
+    }
+
+    .description p {
+        font-size: 1.5rem;
+        width: 100%;
+    }
+
+    .document p {
+        font-size: 1.25rem;
+    }
+}
+
+
+/* Desktop and tablet styles */
+@media only screen and (min-width: 768px) {
+
+    body {
+        background-color: white;/*#e5fcf4;*/
+        color: #00150d;
+        overflow: hidden;
+    }
+
+    .btn {
+        text-decoration: none;
+        background-color: #e5fcf4;
+        color: #00150d;
+        border: 2px outset #b3f8de;
+        border-radius: 5px;
+        transition: all .15s ease-in-out;
+        font-weight: 900;
+    }
+
+    .btn:active {
+        border-style: inset;
+        color: #04e892;
+    }
+
+    .btn:hover {
+        /* color:#04e892; */
+    }
+
+    .activeBtn {
+        background-color: #04e892;
+        color:#00150d;
+    }
+
+    .activeBtn:active {
+        border-style: inset;
+        color: #00150d;
+    }
+
+    .activeBtn:hover {
+        color:#00150d;
+    }
+
+    .cbBody {
+        margin-left: 10vw;
+        margin-right: 10vw;
+        
+    }
+
+    .title {
+        border-bottom:4px ridge #04e892;
+        margin-bottom: 2em;
+    }
+
+    .menu {
+        /* display: flex;
+        justify-content: space-between; */
+        width: 100%;
+    }
+
+    .stats {
+        justify-self: flex-start;
+    }
+
+
+    .navBar {
+        background-color: #04e892;
+        color: #002e1d;
+    }
+
+        .navBar ul li a {
+            color: #002e1d !important;
+        }
+
+            .navBar ul li a:hover {
+                color: #e5fcf4 !important;
+            }
+
+    
+    .statsContainer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .optionsContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items:flex-end;
+    }
+    
+    .options {
+        /* display: flex;
+        flex-direction: row;
+        justify-self: flex-end; */
+        /* padding: 1rem; */
+        text-align: center;
+        gap: .5rem;
+    }
+
+    .optionsUl {
+        display: flex;
+        justify-content:space-between;
+    }
+
+    .dropDown {
+        background-color: #e5fcf4;
+        color:#00150d;
+        display: grid;
+        grid-template-columns: 1fr;
+        min-width: fit-content;
+        height: 60vh;
+        padding: 1.5rem;
+        border-radius: 3px;
+        overflow: visible;
+        overflow-y: scroll;
+    }
+ 
+    .dropDown::-webkit-scrollbar {
+        width: 1.5rem;
+    }
+
+    .dropDown::-webkit-scrollbar-track {
+        background-color: #e5fcf4;
+        border-radius: 3px;
+        border-left: 2px solid #ccece0;
+    }
+
+    .dropDown::-webkit-scrollbar-thumb {
+        background-color: #04e892;
+        border-radius: 5px;
+        border: 2px outset #02a266;
+    } 
+
+    .dropdown::-webkit-scrollbar {
+        width: 2em;
+    } 
+
+    .dropDown p {
+        font-size: 1.25rem;
+    }
+
+    .dropdownArea {
+        width: 50vw;
+        min-height: 60vh;
+        margin-bottom: 2em;
+        border: 1px solid #81f3c8;
+        border-radius: 3px;
+        box-shadow: -2px 2px 2px #b3f8de;
+        transition: all 1s ease-in-out;
+    }
+
+    .payBtn {
+        cursor:pointer;
+    }
+
+    .expandedBills {
+        margin-top: -16px;
+        margin-left: 2vw;
+        margin-bottom: 32px;
+        background-color: #a0f4d7;
+        border-left: 4px solid #002e1d;
+    }
+
+    .expandedBills p {
+        padding: 1em;
+    }
+
+
+
+
+
+}

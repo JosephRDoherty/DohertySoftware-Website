@@ -395,6 +395,7 @@ hr:not([size]) {
 
 /*Desktop and Tablet CSS*/
 @media only screen and (min-width:600px) {
+
     .navBar {
         margin-bottom: .5em;
     }
@@ -483,7 +484,11 @@ hr:not([size]) {
 
 
 /* Desktop and tablet styles */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 905px) {
+
+    #mobileWarning {
+        display: none;
+    }
 
     body {
         background-color: white;/*#e5fcf4;*/

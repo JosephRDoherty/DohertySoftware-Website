@@ -54,16 +54,19 @@ const monthlyIncome = incomeThisMonth(today.getMonth(), today.getFullYear());
 
 // this is the documentation for the web application
 const informationStr = `
-<h3>Welcome to the Money Management System by J|Labs</h3>
-<p>MMS is a cash flow prediction and balancing web application built by Joe Doherty.</p>
+<h3>Welcome to the Money Management System</h3>
+<p>MMS is a cash flow prediction and balancing web application built by Joseph Doherty.</p>
 <hr>
 <h4>Expense Tracking</h4>
 <p>
 MMS offers a comprehensive expense-tracking system. At the top of the Information section you will find multiple tabs to view expenses due across 8 weeks, 
 separated by paydays. Each payday-payday section is 14 days, and thus called a "Fortnight". These are all tracked in real-time and will be automatically updated as
-the weeks go on, or if the pay schedule is changed. *Note, bills are sorted by date, resulting in bills from the previous month being put at the bottom of the list,
+the weeks go on, or if the pay schedule is changed. 
+<br>
+<br>
+<em>*Note, bills are sorted by date, resulting in bills from the previous month being put at the bottom of the list,
 despite the fact that they are due sooner. This is a minor inconvience that will be a major inconvience to solve. Just be aware of this as you are using this
-part of the MMS.
+part of the MMS.</em>
 </p>
 <hr>
 <h4>All Bills</h4>
@@ -74,11 +77,12 @@ due date.
 <hr>
 <h4>Pay Calendar</h4>
 <p>
-Finally is the "Pay Calendar". This displays 52 weeks of paydays and their associated costs. This is a useful tool for viewing cash flow across the next 12 months,
-which could be useful for planning vacations and more.
+Finally is the "Pay Calendar". This displays 52 weeks of paydays and their associated costs. The amount due is on the left, and the profit is on the right.
+You can also click on any payday to reveal the bills due during that period. This is a useful tool for viewing cash flow across the next 12 months, which could
+be useful for planning vacations and more.
 </p>
 <hr>
-<h4>Stats</h4>
+<h3>Stats</h3>
 <p>
 The "Stats" section displays various monthly and fortnightly stats, such as income, profit, budget tools, and more.
 <hr>
@@ -109,10 +113,9 @@ very differently:
 The Fortnight Budget v3 accurately predicts the next 52 weeks of paychecks, and finds the amount needed to save every fortnight in order to never go above budget.
 Sometimes, this will end up with $2400 saved up, only for it to drop considerably very quickly. With this model, there is little room for error, so maintaining the
 constant, even flow of cash is required for accurate budgeting. The other models end up developing a savings well beyond the required amount, which could be useful for
-building up a somewhat automatic buffer-zone or emergency fund. Fortnight Budget v3 actually ends up being less per-year than the expected yearly expenses. This is a 
-paradox, but it has to do with the fact that these payday-payday periods are not falling perfectly within one year or the next. This has been tested up to 4 years ahead,
-and is perfectly acceptable despite this fact. //CHECK THIS, IT MAY BE FORGETTING GAS AND FOOD, but I'm kinda thinking of making them separate anyways, since they're
-more free-flowing.
+building up a somewhat automatic buffer-zone or emergency fund. Fortnight Budget v3 actually ends up being less per-year than the expected yearly expenses. This is
+because it does not include bills with no due-date, such as food and gas. I'm working on a way to compensate for this, but since food and gas are more free-flow expenses,
+I don't see this as a major pressing issue. Just be aware of this as you are using the system
 </p>
 
 `;
@@ -159,7 +162,7 @@ let rings = new Bill("Rings", 25, 8, "Credit Card");
 let internet = new Bill("Ziply Internet", 53.19, 10, "Utility");
 let washer = new Bill("Home Depot Card", 34, 11, "Credit Card");
 let affirm1 = new Bill("Affirm 1", 22.62, 12, "Credit Card");
-let rent = new Bill("Rent", 1250, 12, "Misc");
+let rent = new Bill("Rent", 1458, 12, "Misc");
 // let rent2 = new Bill("Rent", 625, 12, "Misc");
 let capTwo = new Bill("Capital One 2", 25, 12, "Credit Card");
 let affirm2 = new Bill("Affirm 2", 22.30, 13, "Credit Card");
@@ -203,6 +206,7 @@ const fortnight3Expenses = arrayCostCalc(billListFortnight3);
 const fortnight4Expenses = arrayCostCalc(billListFortnight4);
 const monthlyExpenses = arrayCostCalc(billList);
 const monthlyProfit = findProfit(monthlyIncome, monthlyExpenses);
+const postBudgetFortnightProfit = findProfit(totalIncome, fortnightBudgetv3());
 
 const yearlyCost = monthlyExpenses * 12;
 
@@ -304,7 +308,8 @@ function printBillArray(array){
             str += obj.amount;
             str += " | Due: ";
             str += obj.dueDate;
-            str += "</p><hr>";
+            str += "</p>";
+            str += "<hr>";
     })
     return str;
 }
@@ -535,6 +540,59 @@ function fortnightBudgetv2(){
     return Math.ceil(fortnightCostv2);
 }
 
+function fortnightBudgetv3(){
+    // This is the bare minimum to save every paycheck, so that we always have enough for bills: 1485 per fortnight
+    // with this method, it's all about keeping that money safe. Sometimes we might end up with 2400 dollars in the account, but other times it drops to 26
+    // with the minimum of 1485, we never really develop a savings, as it's all money saved for the future (even if it's far away)
+    // We would have to save ON TOP OF 1485.
+    //=====================================================================================
+    // THIS DOES NOT INCLUDE ANY OFF MONTHS WHERE INCOME IS NOT THE SAME AS NORMAL!!!!!!!!!
+    //=====================================================================================
+    let savedPer = 0;
+    let lookAhead = 26;
+    //let postCost = 0;
+    let array = calcFuturePaydayCost(lookAhead);
+    let loopResult = false;
+
+    function whileLoop(){
+        while(loopResult === false){
+            forLoop();
+            savedPer += 1;
+        }
+        return savedPer
+    }
+
+    function forLoop(){
+        let postCost = 0;
+        for(let i=0; i<array.length-2; i++){
+
+            postCost = postCost + savedPer - array[i].cost;
+            if(postCost < 0){
+                loopResult = false;
+                break;
+            }
+            loopResult = true;
+        }
+    }
+
+    return whileLoop();
+    
+}
+
+
+function fortnightBudgetTester(amountSaved = 1594, array = calcFuturePaydayCost(26)){
+
+    let savedPer = amountSaved;
+    let postCost = 0;
+    console.log("savedPer: " + savedPer);
+    for(let i=0; i<array.length-2; i++){
+            
+        console.log("array cost: " + array[i].cost);
+        postCost = postCost + savedPer - array[i].cost;
+        console.log("updated postCost: " + postCost);
+    }
+}
+
 function calcFuturePaydayCost(lookAhead, printToConsole = false, includeBills = false){
     // should display a list of dates of paychecks, and the cost during that time
     let totalAmount = 0;
@@ -589,60 +647,6 @@ function calcFuturePaydayCost(lookAhead, printToConsole = false, includeBills = 
     }
 }
 
-function fortnightBudgetTester(amountSaved = 1485,array = calcFuturePaydayCost(26)){
-
-    let savedPer = amountSaved;
-    let postCost = 0;
-    console.log("postCost: " + postCost);
-    for(let i=0; i<array.length-2; i++){
-        
-        console.log("array cost: " + array[i].cost);
-        postCost = postCost + savedPer - array[i].cost;
-        console.log("updated postCost: " + postCost);
-    }
-}
-
-function fortnightBudgetv3(){
-    // This is the bare minimum to save every paycheck, so that we always have enough for bills: 1485 per fortnight
-    // with this method, it's all about keeping that money safe. Sometimes we might end up with 2400 dollars in the account, but other times it drops to 26
-    // with the minimum of 1485, we never really develop a savings, as it's all money saved for the future (even if it's far away)
-    // We would have to save ON TOP OF 1485.
-    //=====================================================================================
-    // THIS DOES NOT INCLUDE ANY OFF MONTHS WHERE INCOME IS NOT THE SAME AS NORMAL!!!!!!!!!
-    //=====================================================================================
-    let savedPer = 0;
-    let lookAhead = 52;
-    //let postCost = 0;
-    let array = calcFuturePaydayCost(lookAhead);
-    let loopResult = false;
-
-    function whileLoop(){
-        while(loopResult === false){
-            forLoop();
-            savedPer += 1;
-            //console.log("updated postCost: " + postCost);
-            console.log("SavedPer: " + savedPer);
-        }
-        return savedPer
-    }
-
-
-    function forLoop(){
-        let postCost = 0;
-        for(let i=0; i<array.length-2; i++){
-
-            postCost = postCost + savedPer - array[i].cost;
-            if(postCost < 0){
-                loopResult = false;
-                break;
-            }
-            loopResult = true;
-        }
-    }
-
-    return whileLoop();
-    
-}
 
 
 
@@ -681,6 +685,9 @@ HTMLfortnightBudgetv2.innerHTML = fortnightBudgetv2();
 
 const HTMLfortnightBudgetv3 = getID('fortnightBudgetv3');
 HTMLfortnightBudgetv3.innerHTML = fortnightBudgetv3();
+
+const HTMLpostBudgetFortnightProfit = getID('postBudgetFortnightProfit');
+HTMLpostBudgetFortnightProfit.innerHTML = postBudgetFortnightProfit;
 
 
 const HTMLmonthlyIncome = getID('monthlyIncome');

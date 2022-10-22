@@ -23,6 +23,38 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Merriweather', Georgia, serif;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+hr {
+    margin: 1rem 0;
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: .25;
+}
+
+hr:not([size]) {
+    height: 1px;
 }
 
 .container {
@@ -39,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navBar {
     display: flex;
-    width: 100vw;
+    width: 80vw;
     background-color: #319194;
     justify-content: space-between;
     padding-left: 10vw;
@@ -60,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 
         .navBar li a {
             text-decoration: none;
-            color: black;
+            color: #002e1d !important;
             font-family: 'Merriweather', Georgia, serif;
         }
 
@@ -456,11 +488,20 @@ h1, h2, h3, h4, h5, h6 {
     body {
         background-color: white;/*#e5fcf4;*/
         color: #00150d;
+        margin: 0px;
         overflow: hidden;
     }
 
     .btn {
+        display: inline-block;
+        line-height: 1.5;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
         text-decoration: none;
+        user-select: none;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
         background-color: #e5fcf4;
         color: #00150d;
         border: 2px outset #b3f8de;
@@ -606,7 +647,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .expandedBills {
-        margin-top: -16px;
+        margin-top: -21px;
         margin-left: 2vw;
         margin-bottom: 32px;
         background-color: #a0f4d7;

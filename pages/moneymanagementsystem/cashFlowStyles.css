@@ -497,6 +497,13 @@ hr:not([size]) {
         overflow: hidden;
     }
 
+    #docBody {
+        display: grid;
+        grid-template-columns: 10vw 50vw 10vw;
+        gap: 1rem;
+        /* justify-content: space-between; */
+    }
+
     .btn {
         display: inline-block;
         line-height: 1.5;
@@ -538,21 +545,10 @@ hr:not([size]) {
         color:#00150d;
     }
 
-    .cbBody {
-        margin-left: 10vw;
-        margin-right: 10vw;
-        
-    }
 
     .title {
         border-bottom:4px ridge #04e892;
         margin-bottom: 2em;
-    }
-
-    .menu {
-        /* display: flex;
-        justify-content: space-between; */
-        width: 100%;
     }
 
     .stats {
@@ -563,6 +559,7 @@ hr:not([size]) {
     .navBar {
         background-color: #04e892;
         color: #002e1d;
+        margin-bottom: 0;
     }
 
         .navBar ul li a {
@@ -573,44 +570,43 @@ hr:not([size]) {
                 color: #e5fcf4 !important;
             }
 
-    
-    .statsContainer {
-        display: flex;
-        justify-content: space-between;
-    }
+        .navBar h5 {
+            text-align: left;
 
-    .optionsContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items:flex-end;
-    }
+        }
     
     .options {
-        /* display: flex;
-        flex-direction: row;
-        justify-self: flex-end; */
-        /* padding: 1rem; */
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        background-color:#04e892;
         text-align: center;
+        width:10vw;
         gap: .5rem;
     }
 
     .optionsUl {
         display: flex;
-        justify-content:space-between;
+        flex-direction:column;
+        justify-content:flex-start;
+        height: 90vh;
+        padding: 0;
     }
 
     .dropDown {
         background-color: #e5fcf4;
         color:#00150d;
-        display: grid;
+        display: block;
         grid-template-columns: 1fr;
         min-width: fit-content;
-        height: 60vh;
+        height: 75vh;
         padding: 1.5rem;
         border-radius: 3px;
         overflow: visible;
         overflow-y: scroll;
+        border: 1px solid #81f3c8;
+        border-radius: 3px;
+        box-shadow: -2px 2px 2px #b3f8de;
     }
  
     .dropDown::-webkit-scrollbar {
@@ -638,12 +634,9 @@ hr:not([size]) {
     }
 
     .dropdownArea {
-        width: 50vw;
-        min-height: 60vh;
-        margin-bottom: 2em;
-        border: 1px solid #81f3c8;
-        border-radius: 3px;
-        box-shadow: -2px 2px 2px #b3f8de;
+        width: 100%;
+        height: 80vh;
+        margin-top:1rem;
         transition: all 1s ease-in-out;
     }
 

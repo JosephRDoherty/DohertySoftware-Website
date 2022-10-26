@@ -673,8 +673,6 @@ function swapTitle(title, area){;
 }
 
 // Stats
-const HTMLtoday = getID('today');
-HTMLtoday.innerHTML = today.toDateString();
 
 
 const HTMLfortnightBudget = getID('fortnightBudget');
@@ -797,6 +795,10 @@ HTMLpayCalendar.addEventListener("click", function(){showDiv("payCalendarDropDow
 HTMLpayCalendar.addEventListener("click", function(){swapTitle("Pay Calendar", HTMLfortnightInfo)});
 const HTMLpayCalendarDropDown = getID("payCalendarDropDown");
 HTMLpayCalendarDropDown.innerHTML = printFuturePaydayCost(calcFuturePaydayCost(26));
+
+// Stats
+const HTMLstats = getID("stats");
+HTMLstats.addEventListener("click", function(){showDiv("statsContainer", "block", "stats", null, "activeBtn")});
 
 const fortnightTabList = [HTMLbillsDueFortnight1, HTMLbillsDueFortnight2, HTMLbillsDueFortnight3, HTMLbillsDueFortnight4,HTMLbillsList]
 

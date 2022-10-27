@@ -16,12 +16,9 @@
 
     <header>
         <nav class="navBar">
-            <h3>Money Management System<span id="darkModeBtn"><i class="fa-solid fa-moon"></i></span>
-                <h5>Information: <span id="fortnightInfo"></span></h5>
-            </h3>
+            <h3>MMS</h3>
             <ul>
                 <li><a href="./../../index.html">Home</a></li>
-                <li>&copy; 2022 - Joseph Doherty</li>
             </ul>
         </nav>
     </header>
@@ -29,22 +26,24 @@
     <div id="docBody">
         <h1 id="mobileWarning">MOBILE VERSION COMING SOON. PLEASE USE A DESKTOP PC</h1>
         <div class="options">
+            <ul class="toolbar">
+                <li class="toolbtn" id="darkModeBtn"><i class="fa-solid fa-moon"></i></li>
+            </ul>
 
             <ul class="optionsUl">
-                <li class="btn" id="information"><i class="fa-solid fa-book"></i>Help</li>
-                <li class="btn" id="billsDueFortnight1"><i class="fa-solid fa-calendar-check"></i><span id=fortnight1Date></span> $<span
+                
+                <li class="btn" id="information"><i class="fa-solid fa-book"></i><br><p>Help</p></li>
+                <li class="btn" id="billsDueFortnight1"><i class="fa-solid fa-calendar-check"></i><br><span id=fortnight1Date></span><br> $<span
                         id="fortnight1Cost"></span></li>
-                <li class="btn" id="billsDueFortnight2"><i class="fa-solid fa-calendar-day"></i><span id=fortnight2Date></span> $<span
+                <li class="btn" id="billsDueFortnight2"><i class="fa-solid fa-calendar-day"></i><br><span id=fortnight2Date></span><br> $<span
                         id="fortnight2Cost"></span></li>
-                <li class="btn" id="billsDueFortnight3"><i class="fa-solid fa-calendar-week"></i><span id=fortnight3Date></span> $<span
+                <li class="btn" id="billsDueFortnight3"><i class="fa-solid fa-calendar-week"></i><br><span id=fortnight3Date></span><br> $<span
                         id="fortnight3Cost"></span></li>
-                <li class="btn" id="billsDueFortnight4"><i class="fa-solid fa-calendar-days"></i><span id=fortnight4Date></span> $<span
+                <li class="btn" id="billsDueFortnight4"><i class="fa-solid fa-calendar-days"></i><br><span id=fortnight4Date></span><br> $<span
                         id="fortnight4Cost"></span></li>
-                <li class="btn" id="billList">All Bills</li>
-                <li class="btn" id="payCalendar"><i class="fa-solid fa-calendar"></i>Pay Calendar</li>
-                <li class="btn" id="stats">Stats</li>
-                <li class="btn" style="display: none">Add/Update Bill</li>
-                <li class="btn" style="display: none">Add/Update Paycheck</li>
+                <li class="btn" id="billList"><i class="fa-solid fa-list"></i><br><p>All Bills</p></li>
+                <li class="btn" id="payCalendar"><i class="fa-solid fa-calendar"></i><br><p>Pay Calendar</p></li>
+                <li class="btn" id="stats"><i class="fa-solid fa-file-invoice"></i><br><p>Stats</p></li>
             </ul>
         </div>
 

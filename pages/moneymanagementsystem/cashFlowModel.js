@@ -56,6 +56,7 @@ const monthlyIncome = incomeThisMonth(today.getMonth(), today.getFullYear());
 const informationStr = `
 <h3>Welcome to the Money Management System</h3>
 <p>MMS is a cash flow prediction and balancing web application built by Joseph Doherty.</p>
+<p>&copy; 2022 - Joseph Doherty</p>
 <hr>
 <h4>Expense Tracking</h4>
 <p>
@@ -734,14 +735,14 @@ const HTMLfortnightInfo = getID("fortnightInfo");
 
 const HTMLinformation = getID("information")
 HTMLinformation.addEventListener("click", function(){showDiv("informationDropDown", "grid", "information", null, "activeBtn")});
-HTMLinformation.addEventListener("click", function(){swapTitle("Help Menu", HTMLfortnightInfo)});
+// HTMLinformation.addEventListener("click", function(){swapTitle("Help Menu", HTMLfortnightInfo)});
 const HTMLinformationDropDown = getID("informationDropDown");
 HTMLinformationDropDown.innerHTML = informationStr;
 
 // Fortnight 1
 const HTMLbillsDueFortnight1 = getID("billsDueFortnight1");
 HTMLbillsDueFortnight1.addEventListener("click", function(){showDiv("billsDueFortnight1DropDown", "grid", "billsDueFortnight1", null, "activeBtn")});
-HTMLbillsDueFortnight1.addEventListener("click", function(){swapTitle(removeDay(nearestPayday().toDateString()), HTMLfortnightInfo)});
+// HTMLbillsDueFortnight1.addEventListener("click", function(){swapTitle(removeDay(nearestPayday().toDateString()), HTMLfortnightInfo)});
 const HTMLbillsDueFortnight1DropDown = getID("billsDueFortnight1DropDown");
 const HTMLfortnight1Date = getID("fortnight1Date");
 HTMLfortnight1Date.innerHTML = removeDay(nextPaycheck(0).toDateString());
@@ -752,7 +753,7 @@ HTMLbillsDueFortnight1DropDown.innerHTML = printBillArray(billListFortnight1);
 // Fortnight 2
 const HTMLbillsDueFortnight2 = getID("billsDueFortnight2");
 HTMLbillsDueFortnight2.addEventListener("click", function(){showDiv("billsDueFortnight2DropDown", "grid", "billsDueFortnight2", null, "activeBtn")});
-HTMLbillsDueFortnight2.addEventListener("click", function(){swapTitle(removeDay(nextPaycheck(1).toDateString()), HTMLfortnightInfo)});
+// HTMLbillsDueFortnight2.addEventListener("click", function(){swapTitle(removeDay(nextPaycheck(1).toDateString()), HTMLfortnightInfo)});
 const HTMLbillsDueFortnight2DropDown = getID("billsDueFortnight2DropDown");
 const HTMLfortnight2Date = getID("fortnight2Date");
 HTMLfortnight2Date.innerHTML = removeDay(nextPaycheck(1).toDateString());
@@ -763,7 +764,7 @@ HTMLbillsDueFortnight2DropDown.innerHTML = printBillArray(billListFortnight2);
 // Fortnight 3
 const HTMLbillsDueFortnight3 = getID("billsDueFortnight3");
 HTMLbillsDueFortnight3.addEventListener("click", function(){showDiv("billsDueFortnight3DropDown", "grid", "billsDueFortnight3", null, "activeBtn")});
-HTMLbillsDueFortnight3.addEventListener("click", function(){swapTitle(removeDay(nextPaycheck(2).toDateString()), HTMLfortnightInfo)});
+// HTMLbillsDueFortnight3.addEventListener("click", function(){swapTitle(removeDay(nextPaycheck(2).toDateString()), HTMLfortnightInfo)});
 const HTMLbillsDueFortnight3DropDown = getID("billsDueFortnight3DropDown");
 const HTMLfortnight3Date = getID("fortnight3Date");
 HTMLfortnight3Date.innerHTML = removeDay(nextPaycheck(2).toDateString());
@@ -774,7 +775,7 @@ HTMLbillsDueFortnight3DropDown.innerHTML = printBillArray(billListFortnight3);
 // Fortnight 4
 const HTMLbillsDueFortnight4 = getID("billsDueFortnight4");
 HTMLbillsDueFortnight4.addEventListener("click", function(){showDiv("billsDueFortnight4DropDown", "grid", "billsDueFortnight4", null, "activeBtn")});
-HTMLbillsDueFortnight4.addEventListener("click", function(){swapTitle(removeDay(nextPaycheck(3).toDateString()), HTMLfortnightInfo)});
+// HTMLbillsDueFortnight4.addEventListener("click", function(){swapTitle(removeDay(nextPaycheck(3).toDateString()), HTMLfortnightInfo)});
 const HTMLbillsDueFortnight4DropDown = getID("billsDueFortnight4DropDown");
 const HTMLfortnight4Date = getID("fortnight4Date");
 HTMLfortnight4Date.innerHTML = removeDay(nextPaycheck(3).toDateString());
@@ -785,14 +786,14 @@ HTMLbillsDueFortnight4DropDown.innerHTML = printBillArray(billListFortnight4);
 // All Bills
 const HTMLbillsList = getID("billList");
 HTMLbillsList.addEventListener("click", function(){showDiv("allBillsDropDown", "grid", "billList", null, "activeBtn")});
-HTMLbillsList.addEventListener("click", function(){swapTitle("All Bills", HTMLfortnightInfo)});
+// HTMLbillsList.addEventListener("click", function(){swapTitle("All Bills", HTMLfortnightInfo)});
 const HTMLallBillsDropDown = getID("allBillsDropDown");
 HTMLallBillsDropDown.innerHTML = printBillArray(billList);
 
 // Pay Calendar
 const HTMLpayCalendar = getID("payCalendar");
 HTMLpayCalendar.addEventListener("click", function(){showDiv("payCalendarDropDown", "grid", "payCalendar", null, "activeBtn")});
-HTMLpayCalendar.addEventListener("click", function(){swapTitle("Pay Calendar", HTMLfortnightInfo)});
+// HTMLpayCalendar.addEventListener("click", function(){swapTitle("Pay Calendar", HTMLfortnightInfo)});
 const HTMLpayCalendarDropDown = getID("payCalendarDropDown");
 HTMLpayCalendarDropDown.innerHTML = printFuturePaydayCost(calcFuturePaydayCost(26));
 

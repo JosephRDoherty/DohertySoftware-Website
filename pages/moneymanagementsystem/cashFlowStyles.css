@@ -231,6 +231,7 @@ hr {
     gap: 0.5rem;
 }
 
+
 .optionsUl {
     display: flex;
     flex-direction: column;
@@ -273,6 +274,11 @@ hr {
         display: none;
     }
 
+    
+    .optionsUl::-webkit-scrollbar {
+        width: 0;
+    }
+
 .dropDown {
     background-color: #e5fcf4;
     color: var(--black);
@@ -307,10 +313,6 @@ hr {
         background-color: var(--medGreen);
         border-radius: 5px;
         border: 2px outset var(--medDarkGreen);
-    }
-
-    .dropdown::-webkit-scrollbar {
-        width: 2em;
     }
 
     .dropDown p {

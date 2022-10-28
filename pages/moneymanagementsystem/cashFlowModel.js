@@ -826,3 +826,6 @@ const HTMLstats = getID("stats");
 HTMLstats.addEventListener("click", function(){showDiv("statsContainer", "block", "stats", null, "activeBtn")});
 
 const fortnightTabList = [HTMLbillsDueFortnight1, HTMLbillsDueFortnight2, HTMLbillsDueFortnight3, HTMLbillsDueFortnight4,HTMLbillsList]
+
+
+window.onload = showDiv("informationDropDown", "grid", "information", null, "activeBtn");

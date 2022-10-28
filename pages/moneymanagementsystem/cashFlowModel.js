@@ -60,9 +60,8 @@ const informationStr = `
 <hr>
 <h4>Expense Tracking</h4>
 <p>
-MMS offers a comprehensive expense-tracking system. At the top of the Information section you will find multiple tabs to view expenses due across 8 weeks, 
-separated by paydays. Each payday-payday section is 14 days, and thus called a "Fortnight". These are all tracked in real-time and will be automatically updated as
-the weeks go on, or if the pay schedule is changed. 
+MMS offers a comprehensive expense-tracking system. On the left you will find multiple tabs to view expenses-due across four paychecks.
+These are all tracked in real-time and will be automatically updated as the weeks go on, or if the pay schedule is changed. 
 <br>
 <br>
 <em>*Note, bills are sorted by date, resulting in bills from the previous month being put at the bottom of the list,
@@ -70,15 +69,15 @@ despite the fact that they are due sooner. This is a minor inconvience that will
 part of the MMS.</em>
 </p>
 <hr>
-<h4>All Bills</h4>
+<h4>All</h4>
 <p>
 This tab contains a list of all bills stored by the system. These are all sorted by due date, and includes the name, cost, and
 due date.
 </p>
 <hr>
-<h4>Pay Calendar</h4>
+<h4>Year</h4>
 <p>
-Finally is the "Pay Calendar". This displays 52 weeks of paydays and their associated costs. The amount due is on the left, and the profit is on the right.
+This displays 52 weeks of paydays and their associated costs. The amount due is on the left, and the profit is on the right.
 You can also click on any payday to reveal the bills due during that period. This is a useful tool for viewing cash flow across the next 12 months, which could
 be useful for planning vacations and more.
 </p>

@@ -2,6 +2,7 @@
 :root {
     --medGreen: #04e892;
     --medDarkGreen: #02a266;
+    --medLightGreen: #a0f4d7;
     --black: #00150d;
     --darkGreen:  #002E1D;
     --whiteGreen:#e4e6eb;
@@ -333,13 +334,14 @@ hr {
     margin-top: -16px;
     margin-left: 2vw;
     margin-bottom: 32px;
-    background-color: #a0f4d7;
+    background-color: var(--medLightGreen);
     border-left: 4px solid var(--darkGreen);
 }
 
 .expandedBills p {
     padding: 1em;
     margin:0;
+    color:var(--black) !important;
 }
 
 

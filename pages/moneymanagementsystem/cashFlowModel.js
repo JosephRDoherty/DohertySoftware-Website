@@ -56,7 +56,7 @@ const monthlyIncome = incomeThisMonth(today.getMonth(), today.getFullYear());
 const informationStr = `
 <h3>Welcome to the Money Management System</h3>
 <p>MMS is a cash flow prediction and balancing web application built by Joseph Doherty.</p>
-<p>&copy; 2022 - Joseph Doherty</p>
+<p>Attributions at bottom.</p>
 <hr>
 <h4>Expense Tracking</h4>
 <p>
@@ -117,7 +117,13 @@ building up a somewhat automatic buffer-zone or emergency fund. Fortnight Budget
 because it does not include bills with no due-date, such as food and gas. I'm working on a way to compensate for this, but since food and gas are more free-flow expenses,
 I don't see this as a major pressing issue. Just be aware of this as you are using the system
 </p>
-
+<hr>
+<h4>Attributions:</h4>
+<p>&copy; 2022 - Joseph Doherty</p>
+<p>Designed and developed by Joseph Doherty, 2022</p>
+<p>Letter M favicon created by Freepik - Flaticon</p>
+<p>Icons provided by Font Awesome</p>
+<hr>
 `;
 
 

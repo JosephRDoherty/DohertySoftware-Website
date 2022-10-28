@@ -30,12 +30,19 @@ function showTabPanel() {
 }
 
 function darkMode() {
+    var enableDM = document.querySelectorAll(".enableDM");
     if(document.body.className !== "darkMode"){
         document.body.className = "darkMode";
+        for(let i = 0; i<enableDM.length; i++){
+            enableDM[i].classList.add("darkMode");
+        }
         getID("darkModeBtn").className = "darkModeBtnActive";
     } else {
         document.body.className = "";
         getID("darkModeBtn").className = "";
+        for(let i = 0; i<enableDM.length; i++){
+            enableDM[i].classList.remove("darkMode");
+        }
     }
 }
 

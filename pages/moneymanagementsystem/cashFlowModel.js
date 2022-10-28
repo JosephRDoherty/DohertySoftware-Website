@@ -673,6 +673,30 @@ function swapTitle(title, area){;
     }
 }
 
+
+// Hamburger Button
+const HTMLhamburger = getID("hamburger");
+HTMLhamburger.addEventListener("click", showOptions);
+
+
+function showOptions(){
+    if(getID("options").style.display !== "none"){
+        getID("options").style.display = "none";
+        getID("docBody").style.gridTemplateColumns = "auto max-content";
+    } else {
+        getID("options").style.display = "flex";
+        getID("docBody").style.gridTemplateColumns = "max-content auto max-content";
+    }
+
+}
+
+
+
+
+
+
+
+
 // Stats
 
 
@@ -747,7 +771,7 @@ const HTMLbillsDueFortnight1DropDown = getID("billsDueFortnight1DropDown");
 const HTMLfortnight1Date = getID("fortnight1Date");
 HTMLfortnight1Date.innerHTML = removeDay(nextPaycheck(0).toDateString());
 const HTMLfortnight1Cost = getID("fortnight1Cost");
-HTMLfortnight1Cost.innerHTML = fortnight1Expenses;
+HTMLfortnight1Cost.innerHTML = "$" + fortnight1Expenses;
 HTMLbillsDueFortnight1DropDown.innerHTML = printBillArray(billListFortnight1);
 
 // Fortnight 2
@@ -758,7 +782,7 @@ const HTMLbillsDueFortnight2DropDown = getID("billsDueFortnight2DropDown");
 const HTMLfortnight2Date = getID("fortnight2Date");
 HTMLfortnight2Date.innerHTML = removeDay(nextPaycheck(1).toDateString());
 const HTMLfortnight2Cost = getID("fortnight2Cost");
-HTMLfortnight2Cost.innerHTML = fortnight2Expenses;
+HTMLfortnight2Cost.innerHTML = "$" + fortnight2Expenses;
 HTMLbillsDueFortnight2DropDown.innerHTML = printBillArray(billListFortnight2);
 
 // Fortnight 3
@@ -769,7 +793,7 @@ const HTMLbillsDueFortnight3DropDown = getID("billsDueFortnight3DropDown");
 const HTMLfortnight3Date = getID("fortnight3Date");
 HTMLfortnight3Date.innerHTML = removeDay(nextPaycheck(2).toDateString());
 const HTMLfortnight3Cost = getID("fortnight3Cost");
-HTMLfortnight3Cost.innerHTML = fortnight3Expenses;
+HTMLfortnight3Cost.innerHTML = "$" + fortnight3Expenses;
 HTMLbillsDueFortnight3DropDown.innerHTML = printBillArray(billListFortnight3);
 
 // Fortnight 4
@@ -780,7 +804,7 @@ const HTMLbillsDueFortnight4DropDown = getID("billsDueFortnight4DropDown");
 const HTMLfortnight4Date = getID("fortnight4Date");
 HTMLfortnight4Date.innerHTML = removeDay(nextPaycheck(3).toDateString());
 const HTMLfortnight4Cost = getID("fortnight4Cost");
-HTMLfortnight4Cost.innerHTML = fortnight4Expenses;
+HTMLfortnight4Cost.innerHTML = "$" + fortnight4Expenses;
 HTMLbillsDueFortnight4DropDown.innerHTML = printBillArray(billListFortnight4);
 
 // All Bills
@@ -802,15 +826,3 @@ const HTMLstats = getID("stats");
 HTMLstats.addEventListener("click", function(){showDiv("statsContainer", "block", "stats", null, "activeBtn")});
 
 const fortnightTabList = [HTMLbillsDueFortnight1, HTMLbillsDueFortnight2, HTMLbillsDueFortnight3, HTMLbillsDueFortnight4,HTMLbillsList]
-
-document.getElementById("secretButton").addEventListener("click", function() {
-    document.getElementById("secretButton").innerHTML = "Greetings";
-    console.log("You discovered my secret. You musn't tell a soul");
-});
-
-getID("secretButton").addEventListener("click", greetings);
-
-function greetings(){
-    getID("secretButton").innerHTML = "Greetings"
-    console.log("Greetings");
-}

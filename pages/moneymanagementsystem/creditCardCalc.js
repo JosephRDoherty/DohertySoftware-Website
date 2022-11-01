@@ -34,18 +34,18 @@ const debtListByRatio = [];
 let chaseCard = new Debt("Chase Card", 477.42, 55);
 let creditOne = new Debt("Credit One", 380.94, 30);
 let phone = new Debt("Joe's Phone", 711, 22.22);
-let wellsFargo = new Debt("Wells Fargo", 1287.25, 39);
+let wellsFargoCard = new Debt("Wells Fargo", 1287.25, 39);
 let capitalOne = new Debt("Capital One 1", 640.46, 25);
 let capitalTwo = new Debt("Capital One 2", 579.23, 25);
 let jCareCredit = new Debt("Joe's Care Credit", 479.63, 57);
-let eCareCredit = new Debt("Elizabeth's Care Credit", 555.76, 30);
+let eCareCreditCard = new Debt("Elizabeth's Care Credit", 555.76, 30);
 let jPaypal = new Debt("Joe's Paypal", 2081.22, 66);
 let ePaypal = new Debt("Elizabeth's Paypal", 2428.13, 76);
 let xbox = new Debt("Xbox", 279.84, 35);
 let fortiva = new Debt("Fortiva Card", 556.71, 58);
 let affirm1 = new Debt("Affirm 1", 22.57, 22.57);
-let jUpstart = new Debt("Joe's Upstart", 2118.61, 194.54);
-let eUpstart = new Debt("Elizabeth's Upstart", 5179.16, 213.05);
+let jUpstartDebt = new Debt("Joe's Upstart", 2118.61, 194.54);
+let eUpstartDebt = new Debt("Elizabeth's Upstart", 5179.16, 213.05);
 let rings = new Debt("Rings", 162.28, 39);
 let homeDepotCard = new Debt("Home Depot Card", 442.37, 34);
 let affirm2 = new Debt("Affirm 2", 69.88, 23.30);
@@ -168,3 +168,10 @@ function sortByRatio(array){
 
 
 lumpSumCalc(2174.27)
+
+
+
+// WISH LIST:
+// TABS, show sorted by ratio, balance, and minimum payment
+// add new version of balance lumpSumCalc(), where it starts with the largest balance affordable, and tries to add small ones to it
+// Add GUI to MMS site

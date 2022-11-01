@@ -157,6 +157,8 @@ const billList = [];
 // ---------------------------------------------------------------------------------------------------------------------------------
 // Eventually this will be kept in a database, but for now this works.
 
+
+// commented out typically means paid off
 let wellsFargo = new Bill("Wells Fargo Card", 37, 2, "Credit Card");
 let elizaPayPal = new Bill("Elizabeth PayPal", 76, 2, "Credit Card");
 let geico = new Bill("Joe's Car Insurance", 178.05, 2, "Insurance");

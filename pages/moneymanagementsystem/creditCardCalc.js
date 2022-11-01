@@ -1,9 +1,14 @@
-
+// CREDIT CARD MANAGEMENT SYSTEM
+// Not sure if this will be a tab on the MMS or a separate page.
+// Probably a tab.
+// annoyingly 2 js files can't talk to eachother without Node.js or some other thing,
+// so they will have to only talk through the HTML if necessary
+// I'm hoping they won't need to communicate directly
 
 
 class Debt {
     // Creates the Debt class
-    constructor(name, balanceRemaining, minPayment, dueDate, interest = 0) {
+    constructor(name, balanceRemaining, minPayment, dueDate = 0, interest = 0) {
         this.name = name;
         this.balanceRemaining = Math.ceil(balanceRemaining);
         this.minPayment = Math.ceil(minPayment);
@@ -14,13 +19,59 @@ class Debt {
 
     // pushes the debt to the debtList array
     init = function () {
-        debtList.push(this)
+        debtList.push(this);
+        debtListByMinPayment.push(this);
     }
 }
 
 const debtList = [];
-
+const debtListByMinPayment = [];
 
 
 // INITIATE DEBTS HERE
-let wellsFargo = new Debt();
+let chaseCard = new Debt("Chase Card", 477.42, 55);
+let creditOne = new Debt("Credit One", 380.94, 30);
+let phone = new Debt("Joe's Phone", 711, 22.22);
+let wellsFargo = new Debt("Wells Fargo", 1287.25, 39);
+let capitalOne = new Debt("Capital One 1", 640.46, 25);
+let capitalTwo = new Debt("Capital One 2", 579.23, 25);
+let jCareCredit = new Debt("Joe's Care Credit", 479.63, 57);
+let eCareCredit = new Debt("Elizabeth's Care Credit", 555.76, 30);
+let jPaypal = new Debt("Joe's Paypal", 2081.22, 66);
+let ePaypal = new Debt("Elizabeth's Paypal", 2428.13, 76);
+let xbox = new Debt("Xbox", 279.84, 35);
+let fortiva = new Debt("Fortiva Card", 556.71, 58);
+let affirm1 = new Debt("Affirm 1", 22.57, 22.57);
+let jUpstart = new Debt("Joe's Upstart", 2118.61, 194.54);
+let eUpstart = new Debt("Elizabeth's Upstart", 5179.16, 213.05);
+let rings = new Debt("Rings", 162.28, 39);
+let homeDepotCard = new Debt("Home Depot Card", 442.37, 34);
+let affirm2 = new Debt("Affirm 2", 69.88, 23.30);
+let taxes = new Debt("Back Taxes", 282.79, 35);
+
+sortByBalance(debtList);
+sortByMinPayment(debtListByMinPayment);
+
+function payDumpCalc(){
+    // Calculates the best cards to pay off to improve cash flow, given a fixed cash amount.
+}
+
+function sortByBalance(array){
+    // Sorts a debt array by balance remaining [DEFAULT SORT]
+    function compareBalance(a, b){
+        return a.balanceRemaining - b.balanceRemaining;
+    }
+
+    array.sort(compareBalance);
+
+}
+
+function sortByMinPayment(array){
+    // Sorts a debt array by min payment
+    function compareMinPayment(a, b){
+        return a.minPayment - b.minPayment;
+    }
+
+    array.sort(compareMinPayment);
+}
+

@@ -8,12 +8,11 @@
 
 class Debt {
     // Creates the Debt class
-    constructor(name, balanceRemaining, minPayment, dueDate = 0, interest = 0) {
+    constructor(name, balanceRemaining, minPayment) {
         this.name = name;
         this.balanceRemaining = Math.ceil(balanceRemaining);
         this.minPayment = Math.ceil(minPayment);
-        this.dueDate = dueDate;
-        this.interest = interest;
+        this.balToMinRatio = ratioCalc(balanceRemaining, minPayment);
         this.init();
     };
 
@@ -21,11 +20,13 @@ class Debt {
     init = function () {
         debtList.push(this);
         debtListByMinPayment.push(this);
+        debtListByRatio.push(this);
     }
 }
 
 const debtList = [];
 const debtListByMinPayment = [];
+const debtListByRatio = [];
 
 
 // INITIATE DEBTS HERE
@@ -51,9 +52,35 @@ let taxes = new Debt("Back Taxes", 282.79, 35);
 
 sortByBalance(debtList);
 sortByMinPayment(debtListByMinPayment);
+sortByRatio(debtListByRatio); 
+// This ratio compares difficulty to pay off, with impact to cash flow.
+// Larger number means it's easier to pay off and will have the most positive impact on cash flow.
+// If two debts have the same balance, but A has a larger minimum payment than B, A will rank higher
+// If two debts have the same minimum payment, but A has a larger balance than B, B will rank higher
 
-function payDumpCalc(){
+
+function payDumpCalc(cash, array=debtListByRatio){
     // Calculates the best cards to pay off to improve cash flow, given a fixed cash amount.
+    let totalCost = 0;
+    let totalMin = 0;
+    const payArray = [];
+    for(let i=0; i<array.length; i++){
+        totalCost += array[i].balanceRemaining;
+        totalMin += array[i].minPayment;
+        payArray.push(array[i]);
+        console.log(totalMin, totalCost)
+        if(totalCost >= cash){
+            console.log(totalMin, totalCost)
+            break;
+        }
+    }
+
+    return payArray;
+
+}
+
+function ratioCalc(a, b){
+    return b / a;
 }
 
 function sortByBalance(array){
@@ -75,3 +102,14 @@ function sortByMinPayment(array){
     array.sort(compareMinPayment);
 }
 
+function sortByRatio(array){
+    // Sorts a debt array by min payment
+    function compareRatio(a, b){
+        return b.balToMinRatio - a.balToMinRatio;
+    }
+
+    array.sort(compareRatio);
+}
+
+
+console.log(payDumpCalc(2174.27));

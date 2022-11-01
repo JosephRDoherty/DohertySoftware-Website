@@ -16,7 +16,7 @@ class Debt {
         this.init();
     };
 
-    // pushes the debt to the debtList array
+    // pushes the debt to the debtList arrays
     init = function () {
         debtList.push(this);
         debtListByMinPayment.push(this);
@@ -24,6 +24,7 @@ class Debt {
     }
 }
 
+// initialize debtLists
 const debtList = [];
 const debtListByMinPayment = [];
 const debtListByRatio = [];
@@ -50,6 +51,7 @@ let homeDepotCard = new Debt("Home Depot Card", 442.37, 34);
 let affirm2 = new Debt("Affirm 2", 69.88, 23.30);
 let taxes = new Debt("Back Taxes", 282.79, 35);
 
+// debtLists, sorted
 sortByBalance(debtList);
 sortByMinPayment(debtListByMinPayment);
 sortByRatio(debtListByRatio); 
@@ -59,8 +61,10 @@ sortByRatio(debtListByRatio);
 // If two debts have the same minimum payment, but A has a larger balance than B, B will rank higher
 
 
-function payDumpCalc(cash, array=debtListByRatio){
+function payDumpCalc(cash, array=debtListByRatio, buffer=100){
     // Calculates the best cards to pay off to improve cash flow, given a fixed cash amount.
+    // This is being used by lumpSumCalc(), which uses multiple versions of this function to find the best algorithm
+
     let totalCost = 0;
     let totalMin = 0;
     const payArray = [];
@@ -68,18 +72,69 @@ function payDumpCalc(cash, array=debtListByRatio){
         totalCost += array[i].balanceRemaining;
         totalMin += array[i].minPayment;
         payArray.push(array[i]);
-        console.log(totalMin, totalCost)
-        if(totalCost >= cash){
-            console.log(totalMin, totalCost)
+    
+        if(totalCost > cash + buffer){
+            // if we've over spent, remove that last option, and then find the closestMatch
+            totalCost -= array[i].balanceRemaining;
+            totalMin -= array[i].minPayment;
+            payArray.pop();
+
+            let remaining = cash - totalCost;
+
+            let closestMatch = findCloseMatch(remaining, payArray);
+            
+            if(closestMatch){
+                payArray.push(closestMatch);
+
+                totalCost += closestMatch.balanceRemaining;
+                totalMin += closestMatch.minPayment;
+            }
             break;
+            
         }
     }
+    // return an object so we can keep all of this data
+    return {
+        debts: payArray,
+        totalCost: totalCost,
+        totalMin: totalMin
+    };
+}
 
-    return payArray;
+function lumpSumCalc(num, buffer=100){
+    // Uses 3 different algorithms to determine amount to pay off
+    // byBalance is probably the best, but byRatio may come in handy
+    // byMinPayment is mostly useless but there may be edge cases where it's useful
+    // I think byMinPayment could actually be improved, but it would need to use a whole different function
+
+    let byRatio = payDumpCalc(2174.27, debtListByRatio);
+    let byBalance = payDumpCalc(2174.27, debtList);
+    let byMinPayment = payDumpCalc(2174.27, debtListByMinPayment);
+
+    console.log(`Using ratio: ${byRatio.totalCost} | ${byRatio.totalMin}`, byRatio.debts);
+    console.log(`Using balance: ${byBalance.totalCost} | ${byBalance.totalMin}`, byBalance.debts);
+    console.log(`Using minimum payment: ${byMinPayment.totalCost} | ${byMinPayment.totalMin}`, byMinPayment.debts);
 
 }
 
+function findCloseMatch(num, currentArray, array=debtListByRatio){
+    // attempts to find the debt that can be paid with the remaining money
+    const potentials = [];
+    for(let i=0; i<array.length; i++){
+        if(array[i].balanceRemaining <= num){
+            // check for duplicates
+            if(!currentArray.includes(array[i])){
+                potentials.push(array[i]);
+            }
+        }
+    }
+    sortByBalance(potentials);
+    return potentials[0];
+}
+
+
 function ratioCalc(a, b){
+    // simple ratio calculator, seems like this should be built in to js
     return b / a;
 }
 
@@ -112,4 +167,4 @@ function sortByRatio(array){
 }
 
 
-console.log(payDumpCalc(2174.27));
+lumpSumCalc(2174.27)

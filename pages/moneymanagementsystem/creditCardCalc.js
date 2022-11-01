@@ -101,6 +101,27 @@ function payDumpCalc(cash, array=debtListByRatio, buffer=100){
     };
 }
 
+function payDumpCalcReverse(cash, buffer=100){
+    const reverseArray = [...debtList].reverse();
+
+    let totalCost = 0;
+    let totalMin = 0;
+
+    const payArray = [];
+    for(let i=0; i<payArray.length; i++){
+        if((totalCost += reverseArray[i].balanceRemaining) <= (cash + buffer)){
+            totalCost += reverseArray[i].balanceRemaining;
+            totalMin += reverseArray[i].minPayment;
+            payArray.push(reverseArray[i]);
+        }
+        if(totalCost <= (cash + buffer)){
+            
+        }
+    }
+}
+
+
+
 function lumpSumCalc(num, buffer=100){
     // Uses 3 different algorithms to determine amount to pay off
     // byBalance is probably the best, but byRatio may come in handy
@@ -109,10 +130,12 @@ function lumpSumCalc(num, buffer=100){
 
     let byRatio = payDumpCalc(2174.27, debtListByRatio);
     let byBalance = payDumpCalc(2174.27, debtList);
+    let byBalanceReverse = payDumpCalc(2174.27, [...debtList].reverse());
     let byMinPayment = payDumpCalc(2174.27, debtListByMinPayment);
 
     console.log(`Using ratio: ${byRatio.totalCost} | ${byRatio.totalMin}`, byRatio.debts);
     console.log(`Using balance: ${byBalance.totalCost} | ${byBalance.totalMin}`, byBalance.debts);
+    console.log(`Using balance REVERSE: ${byBalanceReverse.totalCost} | ${byBalanceReverse.totalMin}`, byBalanceReverse.debts);
     console.log(`Using minimum payment: ${byMinPayment.totalCost} | ${byMinPayment.totalMin}`, byMinPayment.debts);
 
 }

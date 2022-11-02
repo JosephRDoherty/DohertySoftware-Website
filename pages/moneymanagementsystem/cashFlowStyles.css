@@ -71,7 +71,7 @@ h5 {
 
 hr {
     margin: 1rem 0;
-    color: inherit;
+    color: var(--medGreen);
     background-color: currentColor;
     border: 0;
     opacity: .25;
@@ -122,7 +122,7 @@ hr {
     padding-left: 2.5vw;
     padding-right: 10vw;
     padding-top: 2vh;
-    border-bottom: 3px solid var(--black);
+    height: 5vh;
     background-color: var(--medGreen);
     color: var(--darkGreen);
     margin-bottom: 0;
@@ -135,6 +135,7 @@ hr {
     .navBar h3 {
         font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
         margin-left: 3vw;
+        
     }
 
     .navBar i {
@@ -297,19 +298,19 @@ hr {
     }
 
 .dropDown {
+    box-sizing: border-box;
     background-color: #e5fcf4;
     color: var(--black);
     display: block;
     grid-template-columns: 1fr;
     min-width: fit-content;
-    height: calc(100vh - 104px);
+    /* height: calc(100vh - 104px); */
+    height: 93vh;
     max-width: 30em;
     padding: 1.5rem;
-    border-radius: 3px;
     overflow: visible;
     overflow-y: scroll;
     border: 4px outset #81f3c8;
-    border-radius: 3px;
     -webkit-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
@@ -321,7 +322,7 @@ hr {
     }
 
     .dropDown::-webkit-scrollbar-track {
-        background-color: #e5fcf4;
+        background-color: inherit;
         border-radius: 3px;
         border-left: 2px solid #ccece0;
     }
@@ -385,9 +386,9 @@ hr {
     }
 
     .dropDown::-webkit-scrollbar-track {
-        background-color: #e5fcf4;
-        border-radius: 3px;
-        border-left: 2px solid #ccece0;
+        background-color: inherit;
+        /* border-radius: 3px; */
+        border-left: 2px solid var(--medLightGreen);
     }
 
     .dropDown::-webkit-scrollbar-thumb {

@@ -215,7 +215,7 @@ function sortByRatio(array) {
 }
 
 
-lumpSumCalc(2174.27)
+lumpSumCalc(500, 0)
 
 
 

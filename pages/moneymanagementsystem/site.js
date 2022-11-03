@@ -56,14 +56,20 @@ function showDiv(divID, indicator = null, indicatorOffClass = null, indicatorOnC
         if (indicatorObject.divID !== null) {
             //console.log(indicatorObject);
             
-            //showDiv(indicatorObject.divID, indicatorObject.indicator, indicatorObject.indicatorOffClass, indicatorObject.indicatorOnClass, indicatorObject);
+            showDiv(indicatorObject.divID, indicatorObject.indicator, indicatorObject.indicatorOffClass, indicatorObject.indicatorOnClass, indicatorObject);
         }
-        indicatorObject = {...indicatorObject, // Javascript isn't setting this to the indicator object that is being sent into the function, instead it's creating indicatorObject. UGH
-            divID: divID,
-            indicator: indicator,
-            indicatorOffClass: indicatorOffClass,
-            indicatorOnClass: indicatorOnClass,
-        }
+        // indicatorObject = {...indicatorObject, // Javascript isn't setting this to the indicator object that is being sent into the function, instead it's creating indicatorObject. UGH
+        //     divID: divID,
+        //     indicator: indicator,
+        //     indicatorOffClass: indicatorOffClass,
+        //     indicatorOnClass: indicatorOnClass,
+        // }
+
+        indicatorObject.divID = divID;
+        indicatorObject.indicator = indicator;
+        indicatorObject.indicatorOffClass = indicatorOffClass;
+        indicatorObject.indicatorOnClass = indicatorOnClass;
+
         console.log(indicatorObject);
         console.log(activeNavTab);
 
@@ -73,12 +79,16 @@ function showDiv(divID, indicator = null, indicatorOffClass = null, indicatorOnC
         if (indicator) {
             changeClass(indicator, indicatorOffClass, indicatorOnClass);
         }
-        indicatorObject = {...indicatorObject,
-            divID: null,
-            indicator: null,
-            indicatorOffClass: null,
-            indicatorOnClass: null,
-        };
+        // indicatorObject = {...indicatorObject,
+        //     divID: null,
+        //     indicator: null,
+        //     indicatorOffClass: null,
+        //     indicatorOnClass: null,
+        // };
+        indicatorObject.divID = null;
+        indicatorObject.indicator = null;
+        indicatorObject.indicatorOffClass = null;
+        indicatorObject.indicatorOnClass = null;
     }
 }
 

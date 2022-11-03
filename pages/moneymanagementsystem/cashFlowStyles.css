@@ -84,6 +84,10 @@ hr {
 
 /* END GENERICS */
 
+.displayOff {
+    display: none !important;
+}
+
 .darkMode {
     background-color: var(--darkMode) !important;
     color: var(--whiteGreen) !important;
@@ -114,7 +118,13 @@ hr {
     margin: 0;
 }
 
+.textButton {
+    color:var(--medDarkGreen);
+    cursor: pointer;
+    text-decoration: underline;
+}
 
+/* navBar */
 .navBar {
     display: flex;
     width: 87.5vw;
@@ -146,6 +156,8 @@ hr {
         display: flex;
         justify-content: space-between;
         gap: 1em;
+        padding: 0;
+        margin: 0;
     }
 
     .navBar li {
@@ -164,6 +176,8 @@ hr {
         text-align: left;
     }
 
+/* hamburger button */
+
 #hamburger {
     cursor: pointer;
     -webkit-transition: all 0.1s ease-out;
@@ -176,7 +190,7 @@ hr {
     color: var(--whiteGreen);
 }
 
-
+/* end header */
 
 #docBody {
     display: grid;

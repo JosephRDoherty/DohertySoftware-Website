@@ -1,0 +1,82 @@
+
+
+#debtContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: min-content auto;
+    justify-items: center;
+    padding: 0.25rem;
+}
+
+
+
+.debtTabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+    list-style: none;
+    padding: 0rem;
+    margin: 0;
+}
+
+.debtTabs li {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height:3rem;
+    min-width: 15%;
+    padding: 0 1rem;
+    background-color: var(--medGreen);
+    color: var(--black);
+    font-weight: 700;
+}
+
+    .debtTabs li:active, .debtTabsActive {
+        background-color: var(--medLightGreen) !important;
+        color: var(--medGreen);
+        border: 1px solid var(--medDarkGreen) !important;
+    }
+
+#debtStats {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    padding-left: 1.25rem;
+}
+
+#lumpSum {
+    border-left: 1px solid var(--medLightGreen);
+    border-right: 1px solid var(--medLightGreen);
+}
+
+#debtList {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    padding-right: 1.5rem;
+}
+
+
+#debtStatsDropdown {
+
+}
+
+#debtStatsDropdown ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sortByDropdown {
+    
+}
+
+
+@media only screen and (max-width: 478px) {
+
+    .debtTabs {
+
+    }
+
+}

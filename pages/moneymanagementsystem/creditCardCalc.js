@@ -214,11 +214,82 @@ function sortByRatio(array) {
     array.sort(compareRatio);
 }
 
+function costPerMonth(array=debtList){
+    let costPerMonth = 0;
+    for(let i=0; i<array.length; i++){
+        costPerMonth += array[i].minPayment;
+    }
+
+    return costPerMonth;
+}
+
+function totalBalance(array=debtList){
+    let totalBalance = 0;
+    for(let i=0; i<array.length; i++){
+        totalBalance += array[i].balanceRemaining;
+    }
+    return totalBalance;
+}
+
 
 lumpSumCalc(500, 0)
 
 
 
-// WISH LIST:
-// TABS, show sorted by ratio, balance, and minimum payment
-// Add GUI to MMS site
+// Tabs:
+//      Debt List with sorting functionality
+//      lumpSumCalc display with lump sum input option
+//      debt stats tab
+
+
+// =================================================================================================================================================
+//                                                      EVENT LISTENERS
+// =================================================================================================================================================
+
+// Nav button
+
+var activeDebtTab = {
+    divID: null,
+    indicator: null,
+    indicatorOffClass: null,
+    indicatorOnClass: null,
+}
+
+// debtTabs
+const HTMLdebtStats = getID("debtStats");
+HTMLdebtStats.addEventListener("click", function () { showDiv("debtStatsDropdown", "debtStats", null, "debtTabsActive", activeDebtTab) });
+
+const HTMLlumpSum = getID("lumpSum");
+HTMLlumpSum.addEventListener("click", function () { showDiv("lumpSumDropdown", "lumpSum", null, "debtTabsActive", activeDebtTab) });
+
+const HTMLdebtList = getID("debtList");
+HTMLdebtList.addEventListener("click", function () { showDiv("debtListDropdown", "debtList", null, "debtTabsActive", activeDebtTab) });
+
+//===========================
+//      debtDropdowns
+//===========================
+// Debt Stats
+const HTMLdebtStatsDropdown = getID("debtStatsDropdown");
+const HTMLcostPerMonth = getID("costPerMonth");
+HTMLcostPerMonth.innerHTML = costPerMonth();
+const HTMLtotalBalance = getID("totalBalance");
+HTMLtotalBalance.innerHTML = totalBalance();
+const HTMLnumOfDebts = getID("numOfDebts");
+HTMLnumOfDebts.innerHTML = debtList.length;
+
+// lump Sum calc
+const HTMLlumpSumDropdown = getID("lumpSumDropdown");
+
+
+// debt list 
+const HTMLdebtListDropdown = getID("debtListDropdown");
+
+const HTMLdebtSortCarot = getID("debtSortCarot");
+HTMLdebtSortCarot.addEventListener("click", function () {changeClass("debtSortCarot", "fa-caret-up", "fa-caret-down")})
+
+const HTMLsortBy = getID("sortBy");
+//HTMLsortBy.addEventListener("click", )
+
+
+
+

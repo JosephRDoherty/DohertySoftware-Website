@@ -51,18 +51,21 @@ function darkMode() {
 function showDiv(divID, indicator = null, indicatorOffClass = null, indicatorOnClass = null, indicatorObject = null) {
     if (getID(divID).classList.contains("displayOff")) {
         getID(divID).classList.remove("displayOff");
-        changeClass(indicator, indicatorOffClass, indicatorOnClass);
-
-        if (indicatorObject.divID !== null) {
-            //console.log(indicatorObject);
-            
-            showDiv(indicatorObject.divID, indicatorObject.indicator, indicatorObject.indicatorOffClass, indicatorObject.indicatorOnClass, indicatorObject);
+        if(indicator){
+            changeClass(indicator, indicatorOffClass, indicatorOnClass);
         }
 
-        indicatorObject.divID = divID;
-        indicatorObject.indicator = indicator;
-        indicatorObject.indicatorOffClass = indicatorOffClass;
-        indicatorObject.indicatorOnClass = indicatorOnClass;
+        if(indicatorObject){
+            if (indicatorObject.divID !== null) {
+                //console.log(indicatorObject);
+                
+                showDiv(indicatorObject.divID, indicatorObject.indicator, indicatorObject.indicatorOffClass, indicatorObject.indicatorOnClass, indicatorObject);
+            }
+            indicatorObject.divID = divID;
+            indicatorObject.indicator = indicator;
+            indicatorObject.indicatorOffClass = indicatorOffClass;
+            indicatorObject.indicatorOnClass = indicatorOnClass;
+        }
 
     } else {
         getID(divID).classList.add("displayOff");
@@ -70,10 +73,12 @@ function showDiv(divID, indicator = null, indicatorOffClass = null, indicatorOnC
         if (indicator) {
             changeClass(indicator, indicatorOffClass, indicatorOnClass);
         }
-        indicatorObject.divID = null;
-        indicatorObject.indicator = null;
-        indicatorObject.indicatorOffClass = null;
-        indicatorObject.indicatorOnClass = null;
+        if(indicatorObject){
+            indicatorObject.divID = null;
+            indicatorObject.indicator = null;
+            indicatorObject.indicatorOffClass = null;
+            indicatorObject.indicatorOnClass = null;
+        }
     }
 }
 

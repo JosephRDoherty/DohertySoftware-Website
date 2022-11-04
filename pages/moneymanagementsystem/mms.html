@@ -131,13 +131,19 @@
 
                     </div>
                     <div id="debtListDropdown" class="debtDropdown displayOff">
-                        <i id="debtSortCarot" class="fa-solid fa-caret-up"></i>
-                        <p id="sortBy" class="textButton">Sort by:</p>
-                        <ul id="sortByDropdown" class="displayOff">
-                            <li id="sortbyRatio">Ratio</li>
-                            <li id="sortbyBalance">Balance</li>
-                            <li id="sortbyMin">Payment</li>
-                        </ul>
+                        <div class="debtListController">
+                            <i id="debtSortCarot" class="fa-solid fa-caret-up"></i>
+                            <p id="sortBy" class="textButton">Sort by:</p>
+                            <ul id="sortByDropdown" class="displayOff">
+                                <li id="sortbyRatio"><i class="fa-solid fa-mattress-pillow"></i> Ratio</li>
+                                <li><hr></li>
+                                <li id="sortbyBalance"><i class="fa-solid fa-receipt"></i> Balance</li>
+                                <li><hr></li>
+                                <li id="sortbyMin"><i class="fa-solid fa-money-check"></i> Payment</li>
+                            </ul>
+                        </div>
+                        <p id="sorted"></p>
+                        <div id="debtListDisplay"></div>
                     </div>
                 </div>
             </div>

@@ -231,15 +231,36 @@ function totalBalance(array=debtList){
     return totalBalance;
 }
 
+// ========================================================================
+//                        View Functions
+// ========================================================================
 
-lumpSumCalc(500, 0)
+// copy this for printDebtArray 
+function printDebtArray(array){
+    // prints any bill array
+    // for use mostly in HTML contexts 
+    let str = "";
+    array.forEach(obj => {
+            str += "<p><strong>";
+            str += obj.name;
+            str += "</strong><br>";
+            str += "$";
+            str += obj.balanceRemaining;
+            str += " | Min: $";
+            str += obj.minPayment;
+            str += " | Impact: ";
+            str += Math.round(obj.balToMinRatio * 1000) / 1000; // Round for easy viewing
+            str += "</p>";
+            str += "<hr>";
+    })
+    return str;
+}
 
-
-
-// Tabs:
-//      Debt List with sorting functionality
-//      lumpSumCalc display with lump sum input option
-//      debt stats tab
+function printToDebtListDisplay(array, text){
+    // Text is what appears in the Sort By: section on the page
+    getID("sorted").innerHTML = text;
+    HTMLdebtListDisplay.innerHTML = printDebtArray(array);
+}
 
 
 // =================================================================================================================================================
@@ -283,12 +304,24 @@ const HTMLlumpSumDropdown = getID("lumpSumDropdown");
 
 // debt list 
 const HTMLdebtListDropdown = getID("debtListDropdown");
+const HTMLdebtListDisplay = getID("debtListDisplay");
 
 const HTMLdebtSortCarot = getID("debtSortCarot");
 HTMLdebtSortCarot.addEventListener("click", function () {changeClass("debtSortCarot", "fa-caret-up", "fa-caret-down")})
 
 const HTMLsortBy = getID("sortBy");
-//HTMLsortBy.addEventListener("click", )
+HTMLsortBy.addEventListener("click", function () {showDiv("sortByDropdown")})
+
+const HTMLsortByRatio = getID("sortbyRatio");
+HTMLsortByRatio.addEventListener("click", function () {printToDebtListDisplay(debtListByRatio, "Ratio")});
+
+const HTMLsortByBalance = getID("sortbyBalance");
+HTMLsortByBalance.addEventListener("click", function () {printToDebtListDisplay(debtList, "Balance")});
+
+const HTMLsortByMin = getID("sortbyMin");
+HTMLsortByMin.addEventListener("click", function () {printToDebtListDisplay(debtListByMinPayment, "Min Payment")});
+
+
 
 
 

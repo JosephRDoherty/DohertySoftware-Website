@@ -832,10 +832,10 @@ HTMLpayCalendarDropDown.innerHTML = printFuturePaydayCost(calcFuturePaydayCost(2
 const HTMLstats = getID("stats");
 HTMLstats.addEventListener("click", function(){showDiv("statsContainer", "stats", null, "activeBtn", activeNavTab)});
 
-//Debts
+// Debts
 const HTMLdebt = getID("debt");
 HTMLdebt.addEventListener("click", function () { showDiv("debtContainer", "debt", null, "activeBtn", activeNavTab) });
 
 
-
+// Default to this tab on startup
 window.onload = showDiv("informationDropDown", "information", null, "activeBtn", activeNavTab);

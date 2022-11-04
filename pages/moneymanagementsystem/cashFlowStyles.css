@@ -318,9 +318,7 @@ hr {
     display: block;
     grid-template-columns: 1fr;
     min-width: fit-content;
-    /* height: calc(100vh - 104px); */
     height: 93vh;
-    max-width: 30em;
     padding: 1.5rem;
     overflow: visible;
     overflow-y: scroll;

@@ -260,6 +260,7 @@ function printToDebtListDisplay(array, text){
     // Text is what appears in the Sort By: section on the page
     getID("sorted").innerHTML = text;
     HTMLdebtListDisplay.innerHTML = printDebtArray(array);
+    showDiv("sortByDropdown");
 }
 
 

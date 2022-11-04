@@ -79,7 +79,7 @@
     align-items: center;
 }
 
-#debtSortCarot {
+#debtSortCaret {
     box-sizing: border-box;
     background-color: var(--medGreen);
     width: 2rem;
@@ -93,7 +93,7 @@
     border-radius: 0.75rem;
 }
 
-#debtSortCarot:active {
+#debtSortCaret:active {
     color: var(--white);
 }
 

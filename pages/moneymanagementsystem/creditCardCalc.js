@@ -307,8 +307,8 @@ const HTMLlumpSumDropdown = getID("lumpSumDropdown");
 const HTMLdebtListDropdown = getID("debtListDropdown");
 const HTMLdebtListDisplay = getID("debtListDisplay");
 
-const HTMLdebtSortCarot = getID("debtSortCarot");
-HTMLdebtSortCarot.addEventListener("click", function () {changeClass("debtSortCarot", "fa-caret-up", "fa-caret-down")})
+const HTMLdebtSortCaret = getID("debtSortCaret");
+HTMLdebtSortCaret.addEventListener("click", function () {changeClass("debtSortCaret", "fa-caret-up", "fa-caret-down")})
 
 const HTMLsortBy = getID("sortBy");
 HTMLsortBy.addEventListener("click", function () {showDiv("sortByDropdown")})

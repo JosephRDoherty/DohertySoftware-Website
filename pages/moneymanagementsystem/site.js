@@ -58,20 +58,11 @@ function showDiv(divID, indicator = null, indicatorOffClass = null, indicatorOnC
             
             showDiv(indicatorObject.divID, indicatorObject.indicator, indicatorObject.indicatorOffClass, indicatorObject.indicatorOnClass, indicatorObject);
         }
-        // indicatorObject = {...indicatorObject, // Javascript isn't setting this to the indicator object that is being sent into the function, instead it's creating indicatorObject. UGH
-        //     divID: divID,
-        //     indicator: indicator,
-        //     indicatorOffClass: indicatorOffClass,
-        //     indicatorOnClass: indicatorOnClass,
-        // }
 
         indicatorObject.divID = divID;
         indicatorObject.indicator = indicator;
         indicatorObject.indicatorOffClass = indicatorOffClass;
         indicatorObject.indicatorOnClass = indicatorOnClass;
-
-        console.log(indicatorObject);
-        console.log(activeNavTab);
 
     } else {
         getID(divID).classList.add("displayOff");
@@ -79,91 +70,12 @@ function showDiv(divID, indicator = null, indicatorOffClass = null, indicatorOnC
         if (indicator) {
             changeClass(indicator, indicatorOffClass, indicatorOnClass);
         }
-        // indicatorObject = {...indicatorObject,
-        //     divID: null,
-        //     indicator: null,
-        //     indicatorOffClass: null,
-        //     indicatorOnClass: null,
-        // };
         indicatorObject.divID = null;
         indicatorObject.indicator = null;
         indicatorObject.indicatorOffClass = null;
         indicatorObject.indicatorOnClass = null;
     }
 }
-
-// // REFACTOR THESE SHOWDIV FUNCTIONS
-// function showDiv(divID, displayType, divToChange = null, defaultClass = null, activeClass = null) {
-//     // If it's not empty, make it so.
-//     if (!getID(divID).classList.contains("displayOff")) {
-//         getID(divID).classList.add("displayOff");
-//         changeClass(divToChange, activeClass, defaultClass);
-//         // clean the activeTab object
-//         activeTab = {
-//             ...activeTab,
-//             divID: null,
-//             displayType: null,
-//             divToChange: null,
-//             defaultClass: null,
-//             activeClass: null
-//         };
-//     } else {
-//         // Show it!
-//         getID(divID).classList.remove("displayOff");
-//         changeClass(divToChange, defaultClass, activeClass);
-//         // avoid the null error
-//         if (activeTab.divID != null) {
-//             // get rid of the previous tab!!!
-//             showDiv(activeTab.divID, activeTab.displayType, activeTab.divToChange, activeTab.defaultClass, activeTab.activeClass);
-//         }
-//         // create new activeTab object
-//         activeTab = {
-//             ...activeTab,
-//             divID: divID,
-//             displayType: displayType,
-//             divToChange: divToChange,
-//             defaultClass: defaultClass,
-//             activeClass: activeClass
-//         }
-//     }
-// }
-
-
-// // REFACTOR THESE SHOWDIV FUNCTIONS
-// function showDebtTab(divID, displayType, divToChange = null, defaultClass = null, activeClass = null) {
-//     // If it's not empty, make it so.
-//     if (!getID(divID).classList.contains("displayOff")) {
-//         getID(divID).classList.add("displayOff");
-//         changeClass(divToChange, activeClass, defaultClass);
-//         // clean the activeDebtTab object
-//         activeDebtTab = {
-//             ...activeDebtTab,
-//             divID: null,
-//             displayType: null,
-//             divToChange: null,
-//             defaultClass: null,
-//             activeClass: null
-//         };
-//     } else {
-//         // Show it!
-//         getID(divID).classList.remove("displayOff");
-//         changeClass(divToChange, defaultClass, activeClass);
-//         // avoid the null error
-//         if (activeDebtTab.divID != null) {
-//             // get rid of the previous tab!!!
-//             showDebtTab(activeDebtTab.divID, activeDebtTab.displayType, activeDebtTab.divToChange, activeDebtTab.defaultClass, activeDebtTab.activeClass);
-//         }
-//         // create new activeDebtTab object
-//         activeDebtTab = {
-//             ...activeDebtTab,
-//             divID: divID,
-//             displayType: displayType,
-//             divToChange: divToChange,
-//             defaultClass: defaultClass,
-//             activeClass: activeClass
-//         }
-//     }
-// }
 
 function changeClass(div, previousClass, newClass) {
     if (getID(div).classList.contains(newClass)) {

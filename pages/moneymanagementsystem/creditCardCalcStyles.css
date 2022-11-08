@@ -119,11 +119,28 @@
     border: 1px solid var(--darkGreen);
     color: var(--black);
     padding: 0.5rem;
-    transition: all 0.5s ease-in-out;
+    /* transition: all 0.5s ease-in-out; */
+    
 }
 
 .sortByTuck {
-    margin-right: -100vw !important;
+    /* margin-right: -100vw !important; */
+    animation: dropdownAppearance 2s 1;
+    /* z-index: -1; */
+}
+
+@keyframes dropdownAppearance {
+    0% {
+        color: var(--medLightGreen);
+    }
+
+    50% {
+        height: 0;
+    }
+
+    100% {
+        visibility: hidden;
+    }
 }
 
 #sortByDropdown li {

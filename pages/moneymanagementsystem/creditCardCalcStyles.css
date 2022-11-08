@@ -112,39 +112,25 @@
 
 #sortByDropdown {
     position: absolute;
-    margin-top: 10rem;
-    margin-left: 8rem;
+    margin-top: 12rem;
+    margin-left: 0rem;
     list-style: none;
     background-color: var(--medLightGreen);
     border: 1px solid var(--darkGreen);
+    border-radius: 10px;
     color: var(--black);
     padding: 0.5rem;
-    /* transition: all 0.5s ease-in-out; */
-    
+    transition: all 0.15s ease-in-out;
+    box-shadow: -2px 2px 0px var(--black);
 }
 
 .sortByTuck {
-    /* margin-right: -100vw !important; */
-    animation: dropdownAppearance 2s 1;
-    /* z-index: -1; */
-}
-
-@keyframes dropdownAppearance {
-    0% {
-        color: var(--medLightGreen);
-    }
-
-    50% {
-        height: 0;
-    }
-
-    100% {
-        visibility: hidden;
-    }
+    transform: scale(0.01);
+    visibility: collapse;
 }
 
 #sortByDropdown li {
-    font-size: 1rem;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
@@ -160,6 +146,17 @@
     margin: 0.25rem 0;
     color: var(--darkGreen);
 }
+
+#lumpSumForm {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.formFields {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 
 @media only screen and (max-width: 478px) {

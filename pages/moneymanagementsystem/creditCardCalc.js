@@ -334,7 +334,8 @@ const HTMLsortByMin = getID("sortbyMin");
 HTMLsortByMin.addEventListener("click", function () {printToDebtListDisplay(debtListByMinPayment, "Min Payment"), changeClass("debtSortCaret", "fa-caret-up", "fa-caret-down", false)});
 
 
-
-
+// Default All sortBy selection
+printToDebtListDisplay(debtList, "Balance"), changeClass("debtSortCaret", "fa-caret-up", "fa-caret-down", false);
+showDiv("sortByDropdown", null, null, null, null, "sortByTuck"); // this cancels out a previous call. It's a bit hacky but itll do.
 
 

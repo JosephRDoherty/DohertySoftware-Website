@@ -82,11 +82,66 @@ hr {
     }
 
 
+form {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+input[type=text] {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    border: 2px solid var(--medDarkGreen);
+    border-radius: 2rem;
+    padding: 0.5rem;
+    
+}
+
+button[type=button] {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-color: var(--medGreen);
+    padding: 0.75rem;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: -1px 1px 0px var(--black);
+}
+
+button[type=button]:active {
+    box-shadow: -1px 1px 0px var(--medGreen);
+    color: var(--medLightGreen);
+}
+
 /* END GENERICS */
+
+/* UTILITY CLASSES */
+.alignLeft {
+    text-align: left;
+}
+
+.alignRight {
+    text-align: right;
+}
 
 .displayOff {
     display: none !important;
 }
+
+.container {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* END UTILITY CLASSES */
+
+/* DARK MODE STUFF */
 
 .darkMode {
     background-color: var(--darkMode) !important;
@@ -98,31 +153,34 @@ hr {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    box-shadow: 2px 2px 1px var(--whiteGreen);
+    box-shadow: -1px 1px 0px var(--medDarkGreen);
     height: 2rem;
     width: 2rem;
     background-color: var(--black);
-    border: 1px solid var(--black);
+    border: 1px solid var(--medDarkGreen);
     color: var(--whiteGreen);
 }
 
 .darkModeBtnActive {
     background-color: var(--whiteGreen) !important;
     border: 1px solid var(--black) !important;
-    box-shadow: 1px 1px 1px var(--black) !important;
+    box-shadow: -1px 1px 0px var(--black) !important;
     color: var(--black) !important;
 }
 
-.container {
-    padding: 0;
-    margin: 0;
-}
+/* END DARK MODE STUFF */
+
+/* MULTI-PURPOSE CLASSES */
 
 .textButton {
     color:var(--medDarkGreen);
     cursor: pointer;
     text-decoration: underline;
 }
+
+
+
+/* END MULTI-PURPOSE CLASSES */
 
 /* navBar */
 .navBar {

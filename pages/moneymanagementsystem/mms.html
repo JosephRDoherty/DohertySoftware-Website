@@ -128,7 +128,30 @@
                         </ul>
                     </div>
                     <div id="lumpSumDropdown" class="debtDropdown displayOff">
+                        <form id="lumpSumForm">
+                            <div class="formFields">
+                                <div class="formField">
+                                    <label for="amount">Amount</label><br>
+                                    <input type="text" id="amount" name="amount" size="1">
+                                </div>
+                                <div class="formField">
+                                    <label for="buffer">Buffer</label><br>
+                                    <input type="text" id="buffer" name="buffer" size="1" value="100"><br>
+                                </div>
+                            </div>
+                            <button type="button">Calc</button>
+                        </form>
+                        <hr>
+                        <h4>Algorithms</h4>
+                        <ul id="lumpSumInfo">
+                            <li>Ratio:</li>
+                            <li>Balance:</li>
+                            <li>Reverse Balance:</li>
+                            <li>Minimum Payment:</li>
+                        </ul>
+                        <div id="lumpSumListArea" class="debtDropdown">
 
+                        </div>
                     </div>
                     <div id="debtListDropdown" class="debtDropdown displayOff">
                         <div class="debtListController">

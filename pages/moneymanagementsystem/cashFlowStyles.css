@@ -250,6 +250,10 @@ hr {
     justify-self: flex-start;
 }
 
+.optionsTuck {
+    margin-left: -20vw;
+}
+
 .options {
     display: flex;
     flex-direction: column;
@@ -260,6 +264,7 @@ hr {
     width: fit-content;
     padding-left: 0.5rem;
     gap: 0.5rem;
+    transition: all 0.25s ease-out;
 }
 
 

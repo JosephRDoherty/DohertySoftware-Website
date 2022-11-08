@@ -48,16 +48,15 @@ function darkMode() {
 
 // divID is the div you want to show
 // indicator is the indicator that you want to turn on, such as the changing the color of a tab
-function showDiv(divID, indicator = null, indicatorOffClass = null, indicatorOnClass = null, indicatorObject = null) {
-    if (getID(divID).classList.contains("displayOff")) {
-        getID(divID).classList.remove("displayOff");
+function showDiv(divID, indicator = null, indicatorOffClass = null, indicatorOnClass = null, indicatorObject = null, divOffClass="displayOff") {
+    if (getID(divID).classList.contains(divOffClass)) {
+        getID(divID).classList.remove(divOffClass);
         if(indicator){
             changeClass(indicator, indicatorOffClass, indicatorOnClass);
         }
 
         if(indicatorObject){
             if (indicatorObject.divID !== null) {
-                //console.log(indicatorObject);
                 
                 showDiv(indicatorObject.divID, indicatorObject.indicator, indicatorObject.indicatorOffClass, indicatorObject.indicatorOnClass, indicatorObject);
             }
@@ -68,7 +67,7 @@ function showDiv(divID, indicator = null, indicatorOffClass = null, indicatorOnC
         }
 
     } else {
-        getID(divID).classList.add("displayOff");
+        getID(divID).classList.add(divOffClass);
 
         if (indicator) {
             changeClass(indicator, indicatorOffClass, indicatorOnClass);
@@ -82,21 +81,21 @@ function showDiv(divID, indicator = null, indicatorOffClass = null, indicatorOnC
     }
 }
 
-function changeClass(div, previousClass, newClass) {
-    if (getID(div).classList.contains(newClass)) {
-        getID(div).classList.remove(newClass);
-        getID(div).classList.add(previousClass);
+function changeClass(div, previousClass, newClass, toggle=true) {
+    if(toggle){
+        if (getID(div).classList.contains(newClass)) {
+            getID(div).classList.remove(newClass);
+            getID(div).classList.add(previousClass);
+        } else {
+            getID(div).classList.add(newClass);
+            getID(div).classList.remove(previousClass);
+        }
     } else {
         getID(div).classList.add(newClass);
         getID(div).classList.remove(previousClass);
     }
 }
 
-function recursionTest() {
-    // It goes forever, as expected
-    console.log("Recursion");
-    recursionTest();
-}
 
 
 // =============================================================

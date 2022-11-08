@@ -82,6 +82,7 @@
 #debtSortCaret {
     box-sizing: border-box;
     background-color: var(--medGreen);
+    color: var(--black) !important;
     width: 2rem;
     height: 2rem;
     text-align: center;
@@ -116,7 +117,13 @@
     list-style: none;
     background-color: var(--medLightGreen);
     border: 1px solid var(--darkGreen);
+    color: var(--black);
     padding: 0.5rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.sortByTuck {
+    margin-right: -100vw !important;
 }
 
 #sortByDropdown li {

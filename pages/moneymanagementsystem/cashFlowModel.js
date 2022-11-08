@@ -683,24 +683,7 @@ function swapTitle(title, area){;
 
 // Hamburger Button
 const HTMLhamburger = getID("hamburger");
-HTMLhamburger.addEventListener("click", showOptions);
-
-
-function showOptions(){
-    if(getID("options").style.display !== "none"){
-        getID("options").style.display = "none";
-        getID("docBody").style.gridTemplateColumns = "auto max-content";
-    } else {
-        getID("options").style.display = "flex";
-        getID("docBody").style.gridTemplateColumns = "max-content auto max-content";
-    }
-
-}
-
-
-
-
-
+HTMLhamburger.addEventListener("click", function(){showDiv("options", null, null, null, null, "optionsTuck")});
 
 
 

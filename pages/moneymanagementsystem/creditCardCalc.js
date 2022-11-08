@@ -29,6 +29,9 @@ const debtList = [];
 const debtListByMinPayment = [];
 const debtListByRatio = [];
 
+//keep track of debt array
+var activeDebtArray = [];
+
 
 // INITIATE DEBTS HERE
 //let chaseCard = new Debt("Chase Card", 477.42, 55); //PAID OFF!!!!!
@@ -258,9 +261,17 @@ function printDebtArray(array){
 
 function printToDebtListDisplay(array, text){
     // Text is what appears in the Sort By: section on the page
+    activeDebtArray = array;
     getID("sorted").innerHTML = text;
     HTMLdebtListDisplay.innerHTML = printDebtArray(array);
-    showDiv("sortByDropdown");
+    showDiv("sortByDropdown", null, null, null, null, "sortByTuck");
+}
+
+function swapDirection(){
+    printToDebtListDisplay([...activeDebtArray].reverse(), getID("sorted").innerHTML);
+    // cancel out showDiv in printToDebtListDisplay
+    // it's a bit of a hack, but it works
+    showDiv("sortByDropdown", null, null, null, null, "sortByTuck");
 }
 
 
@@ -308,19 +319,19 @@ const HTMLdebtListDropdown = getID("debtListDropdown");
 const HTMLdebtListDisplay = getID("debtListDisplay");
 
 const HTMLdebtSortCaret = getID("debtSortCaret");
-HTMLdebtSortCaret.addEventListener("click", function () {changeClass("debtSortCaret", "fa-caret-up", "fa-caret-down")})
+HTMLdebtSortCaret.addEventListener("click", function () {changeClass("debtSortCaret", "fa-caret-up", "fa-caret-down"), swapDirection()});
 
 const HTMLsortBy = getID("sortBy");
-HTMLsortBy.addEventListener("click", function () {showDiv("sortByDropdown")})
+HTMLsortBy.addEventListener("click", function () {showDiv("sortByDropdown", null, null, null, null, "sortByTuck")});
 
 const HTMLsortByRatio = getID("sortbyRatio");
-HTMLsortByRatio.addEventListener("click", function () {printToDebtListDisplay(debtListByRatio, "Ratio")});
+HTMLsortByRatio.addEventListener("click", function () {printToDebtListDisplay(debtListByRatio, "Ratio"), changeClass("debtSortCaret", "fa-caret-up", "fa-caret-down", false)});
 
 const HTMLsortByBalance = getID("sortbyBalance");
-HTMLsortByBalance.addEventListener("click", function () {printToDebtListDisplay(debtList, "Balance")});
+HTMLsortByBalance.addEventListener("click", function () {printToDebtListDisplay(debtList, "Balance"), changeClass("debtSortCaret", "fa-caret-up", "fa-caret-down", false)});
 
 const HTMLsortByMin = getID("sortbyMin");
-HTMLsortByMin.addEventListener("click", function () {printToDebtListDisplay(debtListByMinPayment, "Min Payment")});
+HTMLsortByMin.addEventListener("click", function () {printToDebtListDisplay(debtListByMinPayment, "Min Payment"), changeClass("debtSortCaret", "fa-caret-up", "fa-caret-down", false)});
 
 
 

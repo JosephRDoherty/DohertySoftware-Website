@@ -381,6 +381,7 @@ const HTMLlumpSumCalcBtn = getID("lumpSumCalcBtn");
 HTMLlumpSumCalcBtn.addEventListener("click", lumpSumUserCalc);
 
 const HTMLlumpSumInfo = getID("lumpSumInfo");
+HTMLlumpSumInfo.addEventListener("change", lumpSumUserCalc);
 
 const HTMLlumpSumListArea = getID("lumpSumListArea");
 

@@ -26,7 +26,7 @@ const totalIncome = joePay + elizaPay;
 
 const daysBetweenPaydays = 14;
 // Remember months are zero-indexed, so -= 1 from month number
-const initialPayday = new Date(2022, 9, 26);
+const initialPayday = new Date(2022, 9, 27);
 // maybe eventually keep track of the initial payday somewhere else, and set checkpoints,
 // so that in a year the program doesn't have to calculate an entire year's worth of paydays just to get to today.
 // or I can just change the initial payday manually in the code if and when it starts to get slow.

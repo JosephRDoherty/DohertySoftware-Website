@@ -110,13 +110,21 @@ button[type=button] {
     padding: 0.75rem;
     border-radius: 2rem;
     border: none;
-    box-shadow: -1px 1px 0px var(--black);
+    box-shadow: 0px 1px 0px var(--black);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; 
 }
 
 button[type=button]:active {
-    box-shadow: -1px 1px 0px var(--medGreen);
+    box-shadow: 0px -1px 0px var(--medLightGreen);
     color: var(--medLightGreen);
 }
+
+
 
 /* END GENERICS */
 
@@ -159,6 +167,12 @@ button[type=button]:active {
     background-color: var(--black);
     border: 1px solid var(--medDarkGreen);
     color: var(--whiteGreen);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; 
 }
 
 .darkModeBtnActive {
@@ -268,6 +282,12 @@ button[type=button]:active {
     border-bottom-left-radius: 5px;
     transition: all .15s ease-in-out;
     font-weight: 900;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; 
 }
 
     .btn:active {
@@ -381,6 +401,7 @@ button[type=button]:active {
     display: block;
     grid-template-columns: 1fr;
     min-width: fit-content;
+    width:100%;
     height: 93vh;
     padding: 1.5rem;
     overflow: visible;

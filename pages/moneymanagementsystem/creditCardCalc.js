@@ -162,11 +162,17 @@ function lumpSumCalc(num, buffer) {
     let byBalanceReverse = payDumpCalcReverse(num, buffer);
     let byMinPayment = payDumpCalc(num, debtListByMinPayment, buffer);
 
-    console.log(`Using ratio: ${byRatio.totalCost} | ${byRatio.totalMin}`, byRatio.debts);
-    console.log(`Using balance: ${byBalance.totalCost} | ${byBalance.totalMin}`, byBalance.debts);
-    console.log(`Using balance REVERSE: ${byBalanceReverse.totalCost} | ${byBalanceReverse.totalMin}`, byBalanceReverse.debts);
-    console.log(`Using minimum payment: ${byMinPayment.totalCost} | ${byMinPayment.totalMin}`, byMinPayment.debts);
+    // console.log(`Using ratio: ${byRatio.totalCost} | ${byRatio.totalMin}`, byRatio.debts);
+    // console.log(`Using balance: ${byBalance.totalCost} | ${byBalance.totalMin}`, byBalance.debts);
+    // console.log(`Using balance REVERSE: ${byBalanceReverse.totalCost} | ${byBalanceReverse.totalMin}`, byBalanceReverse.debts);
+    // console.log(`Using minimum payment: ${byMinPayment.totalCost} | ${byMinPayment.totalMin}`, byMinPayment.debts);
 
+    return {
+        ratio: byRatio,
+        balance: byBalance,
+        revBalance: byBalanceReverse,
+        minPay: byMinPayment
+    }
 }
 
 function findCloseMatch(num, currentArray, array = debtListByRatio) {
@@ -274,6 +280,61 @@ function swapDirection(){
     showDiv("sortByDropdown", null, null, null, null, "sortByTuck");
 }
 
+function lumpSumUserCalc(){
+    let userAmount;
+    let userBuffer;
+    if(Number.isFinite(parseFloat(HTMLlumpSumAmount.value))){
+        userAmount = parseFloat(HTMLlumpSumAmount.value);
+    } else {
+        HTMLlumpSumListArea.innerHTML = "Numbers only, please";
+        return;
+    }
+    if(Number.isFinite(parseFloat(HTMLlumpSumBuffer.value))){
+        userBuffer = parseFloat(HTMLlumpSumBuffer.value);
+    } else {
+        HTMLlumpSumListArea.innerHTML = "Numbers only, please";
+        return;
+    }
+    
+    let dropdown = HTMLlumpSumInfo.value;
+
+    let result = lumpSumCalc(userAmount, userBuffer)
+
+    switch(dropdown){
+        case "Ratio":
+            HTMLlumpSumListArea.innerHTML = printLumpSumChoice(result.ratio);
+            break;
+        case "Balance":
+            HTMLlumpSumListArea.innerHTML = printLumpSumChoice(result.balance)
+            break;
+        case "Reverse Balance":
+            HTMLlumpSumListArea.innerHTML = printLumpSumChoice(result.revBalance)
+            break;
+        case "Minimum Payment":
+            HTMLlumpSumListArea.innerHTML = printLumpSumChoice(result.minPay)
+            break;
+        default:
+            HTMLlumpSumListArea.innerHTML = "<p>You chose a nonexistent option. Please do <em>not</em> misbehave.</p>"
+    }
+}
+
+function printLumpSumChoice(object){
+    let obj = object;
+    let str = "";
+
+    str += "<p><strong>Total Cost: $";
+    str += obj.totalCost;
+    str += "<br> Total Saved per month: $";
+    str += obj.totalMin;
+    str += "</strong>";
+    str += "</p>";
+    str += "<hr>";
+    str += printDebtArray(object.debts);
+    return str;
+
+
+}
+
 
 // =================================================================================================================================================
 //                                                      EVENT LISTENERS
@@ -313,6 +374,15 @@ HTMLnumOfDebts.innerHTML = debtList.length;
 // lump Sum calc
 const HTMLlumpSumDropdown = getID("lumpSumDropdown");
 
+const HTMLlumpSumAmount = getID("lumpSumAmount");
+const HTMLlumpSumBuffer = getID("lumpSumBuffer");
+const HTMLlumpSumCalcBtn = getID("lumpSumCalcBtn");
+
+HTMLlumpSumCalcBtn.addEventListener("click", lumpSumUserCalc);
+
+const HTMLlumpSumInfo = getID("lumpSumInfo");
+
+const HTMLlumpSumListArea = getID("lumpSumListArea");
 
 // debt list 
 const HTMLdebtListDropdown = getID("debtListDropdown");

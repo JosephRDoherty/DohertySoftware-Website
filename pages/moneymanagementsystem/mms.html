@@ -132,25 +132,25 @@
                             <div class="formFields">
                                 <div class="formField">
                                     <label for="amount">Amount</label><br>
-                                    <input type="text" id="amount" name="amount" size="1">
+                                    <input type="text" id="lumpSumAmount" name="amount" size="1">
                                 </div>
                                 <div class="formField">
                                     <label for="buffer">Buffer</label><br>
-                                    <input type="text" id="buffer" name="buffer" size="1" value="100"><br>
+                                    <input type="text" id="lumpSumBuffer" name="buffer" size="1" value="100"><br>
                                 </div>
                             </div>
-                            <button type="button">Calc</button>
+                            <button type="button" id="lumpSumCalcBtn">Calc</button>
                         </form>
                         <hr>
-                        <h4>Algorithms</h4>
-                        <ul id="lumpSumInfo">
-                            <li>Ratio:</li>
-                            <li>Balance:</li>
-                            <li>Reverse Balance:</li>
-                            <li>Minimum Payment:</li>
-                        </ul>
+                        <h3>Algorithms</h3>
+                        <select id="lumpSumInfo">
+                            <option>Ratio</option>
+                            <option>Balance</option>
+                            <option>Reverse Balance</option>
+                            <option>Minimum Payment</option>
+                        </select>
                         <div id="lumpSumListArea" class="debtDropdown">
-
+                            
                         </div>
                     </div>
                     <div id="debtListDropdown" class="debtDropdown displayOff">

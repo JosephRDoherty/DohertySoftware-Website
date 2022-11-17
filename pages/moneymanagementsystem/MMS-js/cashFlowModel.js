@@ -56,6 +56,7 @@ const monthlyIncome = incomeThisMonth(today.getMonth(), today.getFullYear());
 const informationStr = `
 <h3>Welcome to the Money Management System</h3>
 <p>MMS is a cash flow prediction and balancing web application built by Joseph Doherty.</p>
+<p>This documentation is not complete</p>
 <p>Attributions at bottom.</p>
 <hr>
 <h4>Expense Tracking</h4>
